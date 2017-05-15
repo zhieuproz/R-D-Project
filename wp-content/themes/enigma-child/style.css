@@ -1,0 +1,58 @@
+/*
+ Theme Name:   Enigma Child
+ Description:  this is the enigma child theme
+ Author:       Hieu Le
+ Author URI:   https://www.facebook.com/Babyboo.Sonata
+ Template:     enigma
+ Version:      1.0
+ 
+*/
+
+/*
+This sheet is to re-definite style of some classes of bootstrap and Body Signs
+*/
+
+@import url("../enigma/style.css");
+
+@media (min-width: 992px) /* Over-Write to Bootstrap.css for fixing footer in displaying Responsive Layout */
+{
+	.col-md-3 
+	{
+		width:100% !important;
+	}
+}
+@media (min-width: 768px) 
+{
+	.col-sm-6
+	{
+		width:100% !important;
+	}
+}
+
+.modal-backdrop { /* fixing Adding Post is under dark transparent layout */
+ 	z-index: -1 !important;
+}
+
+.modal-dialog /* fxing position of Adding Posting to appropriated place */
+{
+	top: 15% !important;
+}
+
+.modal-counsellor /*fixing position of Adding Counsellor */
+{
+	top:7% !important;
+}
+
+
+
+.body_sign
+{
+	font-family: Open Sans;
+	font-size:16px;
+	line-height: 27px;
+	
+	margin : 0 0 20px;
+	color:#777777;
+	
+}
+

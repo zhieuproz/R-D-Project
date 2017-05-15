@@ -1,0 +1,2900 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Google Maps WD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-29 11:02+0400\n"
+"PO-Revision-Date: 2016-07-29 11:14+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Revision-Date: Fri Apr 15 2016 11:10:33 GMT+0400 (Local Standard Time)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/controllers/GMWDController.php:54
+msgid "Not found"
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:119 ../framework/GMWDHelper.php:267
+msgid "Item(s) Succesfully Removed."
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:122
+msgid "You must select at least one item."
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:167
+#: ../admin/views/GMWDViewMaps_gmwd.php:107
+#: ../admin/views/GMWDViewMaps_gmwd.php:546
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:109
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:356
+#: ../admin/views/GMWDViewThemes_gmwd.php:107
+msgid "Published"
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:167
+msgid "Unpublished"
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:168
+msgid "Item(s) Succesfully "
+msgstr ""
+
+#: ../admin/controllers/GMWDController.php:209
+msgid "Item Succesfully Duplicated."
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:161
+msgid "Unexepted Worksheet Title "
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:191
+msgid "Unexepted Worksheet Cell Headers "
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:260
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:268
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:285
+#: ../admin/controllers/GMWDControllerMarkercategories_gmwd.php:28
+#: ../admin/controllers/GMWDControllerMarkercategories_gmwd.php:34
+#: ../admin/controllers/GMWDControllerMarkercategories_gmwd.php:39
+#: ../framework/GMWDHelper.php:255
+msgid "Item Succesfully Saved."
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerMaps_gmwd.php:333
+#: ../framework/GMWDHelper.php:259
+msgid "Item Succesfully Dublicated."
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerThemes_gmwd.php:27
+msgid "The Item Is Successfully Set as Default. "
+msgstr ""
+
+#: ../admin/controllers/GMWDControllerThemes_gmwd.php:40
+#: ../admin/controllers/GMWDControllerThemes_gmwd.php:46
+#: ../admin/controllers/GMWDControllerThemes_gmwd.php:51
+msgid "Theme Succesfully Saved."
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:265
+#: ../admin/models/GMWDModelThemes_gmwd.php:121
+#: ../admin/views/GMWDViewThemes_gmwd.php:642
+#: ../admin/views/GMWDViewThemes_gmwd.php:817
+msgid "Left"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:265
+#: ../admin/models/GMWDModelThemes_gmwd.php:121
+#: ../admin/views/GMWDViewThemes_gmwd.php:643
+#: ../admin/views/GMWDViewThemes_gmwd.php:818
+msgid "Center"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:265
+#: ../admin/models/GMWDModelThemes_gmwd.php:121
+#: ../admin/views/GMWDViewThemes_gmwd.php:644
+#: ../admin/views/GMWDViewThemes_gmwd.php:819
+msgid "Right"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:265
+#: ../admin/models/GMWDModelMaps_gmwd.php:267
+#: ../admin/models/GMWDModelThemes_gmwd.php:121
+#: ../admin/models/GMWDModelThemes_gmwd.php:123
+#: ../admin/views/GMWDViewMarkers_gmwd.php:24
+msgid "None"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:266
+#: ../admin/models/GMWDModelThemes_gmwd.php:122 ../widgets.php:170
+msgid "Roadmap"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:266
+#: ../admin/models/GMWDModelThemes_gmwd.php:122 ../widgets.php:170
+msgid "Satellite"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:266
+#: ../admin/models/GMWDModelThemes_gmwd.php:122 ../widgets.php:170
+msgid "Hybrid"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:266
+#: ../admin/models/GMWDModelThemes_gmwd.php:122 ../widgets.php:170
+msgid "Terrain"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:267
+#: ../admin/models/GMWDModelThemes_gmwd.php:123
+msgid "Basic Table"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:267
+#: ../admin/models/GMWDModelThemes_gmwd.php:123
+msgid "Advanced Table"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:267
+#: ../admin/models/GMWDModelThemes_gmwd.php:123
+msgid "Carousel"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:270
+#: ../admin/models/GMWDModelMaps_gmwd.php:276
+#: ../admin/models/GMWDModelMaps_gmwd.php:279
+#: ../admin/models/GMWDModelThemes_gmwd.php:126
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Default "
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:270
+#: ../admin/models/GMWDModelThemes_gmwd.php:126
+msgid "Horizontal Bar"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:270
+#: ../admin/models/GMWDModelThemes_gmwd.php:126
+msgid "Dropdown Menu"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelMaps_gmwd.php:281
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+#: ../admin/models/GMWDModelThemes_gmwd.php:131
+msgid "Top Left"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Top Center"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelMaps_gmwd.php:281
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+#: ../admin/models/GMWDModelThemes_gmwd.php:131
+msgid "Top Right"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Left Center"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Left Top"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Left Bottom"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Right Top"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Right Center"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Right Bottom"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelMaps_gmwd.php:281
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+#: ../admin/models/GMWDModelThemes_gmwd.php:131
+msgid "Bottom Left"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+msgid "Bottom Center"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:273
+#: ../admin/models/GMWDModelMaps_gmwd.php:281
+#: ../admin/models/GMWDModelThemes_gmwd.php:128
+#: ../admin/models/GMWDModelThemes_gmwd.php:131
+msgid "Bottom Right"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:277
+msgid "Select "
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:279
+msgid "Small"
+msgstr ""
+
+#: ../admin/models/GMWDModelMaps_gmwd.php:279
+msgid "Large"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:35
+#: ../admin/views/GMWDViewCircles_gmwd.php:38
+#: ../admin/views/GMWDViewCircles_gmwd.php:125
+#: ../admin/views/GMWDViewMaps_gmwd.php:289
+msgid "Add Circle"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:38
+#: ../admin/views/GMWDViewCircles_gmwd.php:125
+msgid "Edit Circle"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:39
+#: ../admin/views/GMWDViewCircles_gmwd.php:126
+#: ../admin/views/GMWDViewMaps_gmwd.php:221
+#: ../admin/views/GMWDViewMaps_gmwd.php:262
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:219
+#: ../admin/views/GMWDViewMarkers_gmwd.php:35
+#: ../admin/views/GMWDViewMarkers_gmwd.php:53
+#: ../admin/views/GMWDViewMarkers_gmwd.php:209
+#: ../admin/views/GMWDViewPolygons_gmwd.php:35
+#: ../admin/views/GMWDViewPolygons_gmwd.php:123
+#: ../admin/views/GMWDViewPolylines_gmwd.php:36
+#: ../admin/views/GMWDViewPolylines_gmwd.php:100
+#: ../admin/views/GMWDViewRectangles_gmwd.php:35
+#: ../admin/views/GMWDViewRectangles_gmwd.php:123
+#: ../admin/views/GMWDViewThemes_gmwd.php:225
+#: ../admin/views/GMWDViewThemes_gmwd.php:1389
+msgid "Cancel"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:47
+msgid "Create a title for the circle on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:47
+#: ../admin/views/GMWDViewMaps_gmwd.php:50
+#: ../admin/views/GMWDViewMaps_gmwd.php:94
+#: ../admin/views/GMWDViewMaps_gmwd.php:400
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:48
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:95
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:227
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:315
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:342
+#: ../admin/views/GMWDViewMarkers_gmwd.php:61
+#: ../admin/views/GMWDViewPolygons_gmwd.php:44
+#: ../admin/views/GMWDViewPolylines_gmwd.php:45
+#: ../admin/views/GMWDViewRectangles_gmwd.php:44
+#: ../admin/views/GMWDViewThemes_gmwd.php:49
+#: ../admin/views/GMWDViewThemes_gmwd.php:93
+#: ../admin/views/GMWDViewThemes_gmwd.php:1156
+#: ../frontend/views/GMWDViewFrontendMap.php:432 ../widgets.php:100
+msgid "Title"
+msgstr "Заглавие"
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:49
+msgid "Set circle line width."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:49
+#: ../admin/views/GMWDViewPolygons_gmwd.php:46
+#: ../admin/views/GMWDViewPolylines_gmwd.php:47
+#: ../admin/views/GMWDViewRectangles_gmwd.php:46
+msgid "Line Width"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:53
+msgid ""
+"Search for location or right-click on the map to bring circle center "
+"address.  Alternatively, add a location manually."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:53
+msgid "Center Address"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:56
+msgid "Or Right Click on the Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:58
+msgid "Choose circle line color."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:58
+#: ../admin/views/GMWDViewPolygons_gmwd.php:52
+#: ../admin/views/GMWDViewPolylines_gmwd.php:53
+#: ../admin/views/GMWDViewRectangles_gmwd.php:52
+msgid "Line Color"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:62
+msgid "Set circle center latitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:62
+#: ../admin/views/GMWDViewMaps_gmwd.php:750
+#: ../admin/views/GMWDViewOptions_gmwd.php:117 ../google-maps-setup.php:353
+msgid "Center Lat"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:65
+msgid "Set an opacity for circle line."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:65
+#: ../admin/views/GMWDViewPolygons_gmwd.php:58
+#: ../admin/views/GMWDViewPolylines_gmwd.php:64
+#: ../admin/views/GMWDViewRectangles_gmwd.php:58
+msgid "Line Opacity"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:69
+msgid "Set circle center longitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:69
+#: ../admin/views/GMWDViewMaps_gmwd.php:754
+#: ../admin/views/GMWDViewOptions_gmwd.php:121 ../google-maps-setup.php:358
+msgid "Center Lng"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:71
+msgid "Set a color for circle."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:71
+#: ../admin/views/GMWDViewPolygons_gmwd.php:69
+#: ../admin/views/GMWDViewRectangles_gmwd.php:64
+msgid "Fill Color"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:75
+msgid "Add a link to circle."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:75
+#: ../admin/views/GMWDViewPolygons_gmwd.php:50
+#: ../admin/views/GMWDViewRectangles_gmwd.php:50
+msgid "Link"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:77
+msgid "Set an opacity for circle."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:77
+#: ../admin/views/GMWDViewPolygons_gmwd.php:80
+#: ../admin/views/GMWDViewRectangles_gmwd.php:75
+msgid "Fill Opacity"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:81
+msgid "Set the circle radius in meters."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:81
+msgid "Radius (meters)"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:83
+msgid "Set a color for circle line on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:83
+#: ../admin/views/GMWDViewPolygons_gmwd.php:87
+#: ../admin/views/GMWDViewPolylines_gmwd.php:75
+#: ../admin/views/GMWDViewRectangles_gmwd.php:87
+msgid "Line Color Hover"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:87
+msgid "Choose whether to show circle center marker or not."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:87
+msgid "Show marker:"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:90
+#: ../admin/views/GMWDViewCircles_gmwd.php:101
+#: ../admin/views/GMWDViewCircles_gmwd.php:118
+#: ../admin/views/GMWDViewMaps_gmwd.php:329
+#: ../admin/views/GMWDViewMaps_gmwd.php:443
+#: ../admin/views/GMWDViewMaps_gmwd.php:782
+#: ../admin/views/GMWDViewMaps_gmwd.php:816
+#: ../admin/views/GMWDViewMaps_gmwd.php:848
+#: ../admin/views/GMWDViewMaps_gmwd.php:871
+#: ../admin/views/GMWDViewMaps_gmwd.php:908
+#: ../admin/views/GMWDViewMaps_gmwd.php:917
+#: ../admin/views/GMWDViewMaps_gmwd.php:940
+#: ../admin/views/GMWDViewMaps_gmwd.php:963
+#: ../admin/views/GMWDViewMaps_gmwd.php:994
+#: ../admin/views/GMWDViewMaps_gmwd.php:1009
+#: ../admin/views/GMWDViewMaps_gmwd.php:1060
+#: ../admin/views/GMWDViewMaps_gmwd.php:1142
+#: ../admin/views/GMWDViewMaps_gmwd.php:1151
+#: ../admin/views/GMWDViewMaps_gmwd.php:1160
+#: ../admin/views/GMWDViewMaps_gmwd.php:1251
+#: ../admin/views/GMWDViewMaps_gmwd.php:1289
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:261
+#: ../admin/views/GMWDViewMarkers_gmwd.php:140
+#: ../admin/views/GMWDViewMarkers_gmwd.php:147
+#: ../admin/views/GMWDViewMarkers_gmwd.php:201
+#: ../admin/views/GMWDViewOptions_gmwd.php:141
+#: ../admin/views/GMWDViewPolygons_gmwd.php:65
+#: ../admin/views/GMWDViewPolygons_gmwd.php:76
+#: ../admin/views/GMWDViewPolygons_gmwd.php:116
+#: ../admin/views/GMWDViewPolylines_gmwd.php:60
+#: ../admin/views/GMWDViewPolylines_gmwd.php:71
+#: ../admin/views/GMWDViewPolylines_gmwd.php:93
+#: ../admin/views/GMWDViewRectangles_gmwd.php:71
+#: ../admin/views/GMWDViewRectangles_gmwd.php:83
+#: ../admin/views/GMWDViewRectangles_gmwd.php:116
+#: ../admin/views/GMWDViewThemes_gmwd.php:487
+#: ../admin/views/GMWDViewThemes_gmwd.php:1450 ../google-maps-setup.php:386
+msgid "No"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:92
+#: ../admin/views/GMWDViewCircles_gmwd.php:103
+#: ../admin/views/GMWDViewCircles_gmwd.php:120
+#: ../admin/views/GMWDViewMaps_gmwd.php:327
+#: ../admin/views/GMWDViewMaps_gmwd.php:784
+#: ../admin/views/GMWDViewMaps_gmwd.php:818
+#: ../admin/views/GMWDViewMaps_gmwd.php:850
+#: ../admin/views/GMWDViewMaps_gmwd.php:873
+#: ../admin/views/GMWDViewMaps_gmwd.php:910
+#: ../admin/views/GMWDViewMaps_gmwd.php:919
+#: ../admin/views/GMWDViewMaps_gmwd.php:942
+#: ../admin/views/GMWDViewMaps_gmwd.php:965
+#: ../admin/views/GMWDViewMaps_gmwd.php:996
+#: ../admin/views/GMWDViewMaps_gmwd.php:1011
+#: ../admin/views/GMWDViewMaps_gmwd.php:1062
+#: ../admin/views/GMWDViewMaps_gmwd.php:1144
+#: ../admin/views/GMWDViewMaps_gmwd.php:1153
+#: ../admin/views/GMWDViewMaps_gmwd.php:1162
+#: ../admin/views/GMWDViewMaps_gmwd.php:1253
+#: ../admin/views/GMWDViewMaps_gmwd.php:1291
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:259
+#: ../admin/views/GMWDViewMarkers_gmwd.php:142
+#: ../admin/views/GMWDViewMarkers_gmwd.php:149
+#: ../admin/views/GMWDViewMarkers_gmwd.php:199
+#: ../admin/views/GMWDViewOptions_gmwd.php:143
+#: ../admin/views/GMWDViewPolygons_gmwd.php:67
+#: ../admin/views/GMWDViewPolygons_gmwd.php:78
+#: ../admin/views/GMWDViewPolygons_gmwd.php:114
+#: ../admin/views/GMWDViewPolylines_gmwd.php:62
+#: ../admin/views/GMWDViewPolylines_gmwd.php:73
+#: ../admin/views/GMWDViewPolylines_gmwd.php:91
+#: ../admin/views/GMWDViewRectangles_gmwd.php:73
+#: ../admin/views/GMWDViewRectangles_gmwd.php:85
+#: ../admin/views/GMWDViewRectangles_gmwd.php:114
+#: ../admin/views/GMWDViewThemes_gmwd.php:485
+#: ../admin/views/GMWDViewThemes_gmwd.php:1452
+#: ../admin/views/GMWDViewUninstall_gmwd.php:84 ../google-maps-setup.php:390
+msgid "Yes"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:94
+msgid "Set a color opacity for circle line on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:94
+#: ../admin/views/GMWDViewPolygons_gmwd.php:93
+#: ../admin/views/GMWDViewPolylines_gmwd.php:82
+#: ../admin/views/GMWDViewRectangles_gmwd.php:93
+msgid "Line Opacity Hover"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:98
+#: ../admin/views/GMWDViewMarkers_gmwd.php:137
+msgid "Choose whether to enable info window or not."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:98
+#: ../admin/views/GMWDViewMarkers_gmwd.php:137
+msgid "Enable Info Window"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:105
+msgid "Set a color for circle on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:105
+#: ../admin/views/GMWDViewPolygons_gmwd.php:99
+#: ../admin/views/GMWDViewRectangles_gmwd.php:99
+msgid "Fill Color Hover"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:111
+msgid "Set a color opacity for circle on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:111
+#: ../admin/views/GMWDViewPolygons_gmwd.php:105
+#: ../admin/views/GMWDViewRectangles_gmwd.php:105
+msgid "Fill Opacity Hover"
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:115
+msgid "Publish your circle."
+msgstr ""
+
+#: ../admin/views/GMWDViewCircles_gmwd.php:115
+#: ../admin/views/GMWDViewMaps_gmwd.php:324
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:256
+#: ../admin/views/GMWDViewMarkers_gmwd.php:196
+#: ../admin/views/GMWDViewPolygons_gmwd.php:111
+#: ../admin/views/GMWDViewPolylines_gmwd.php:88
+#: ../admin/views/GMWDViewRectangles_gmwd.php:111
+#: ../admin/views/GMWDViewThemes_gmwd.php:482
+msgid "Published:"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:35
+msgid " This section allows you to create, edit and delete maps."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:36
+#: ../admin/views/GMWDViewMaps_gmwd.php:190
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:34
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:188
+#: ../admin/views/GMWDViewOptions_gmwd.php:30
+#: ../admin/views/GMWDViewThemes_gmwd.php:35
+#: ../admin/views/GMWDViewThemes_gmwd.php:179
+msgid "Read More in User Manual."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:43 ../gmwd_admin_class.php:132
+#: ../gmwd_admin_class.php:260
+msgid "Maps"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:44
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:42
+#: ../admin/views/GMWDViewThemes_gmwd.php:43
+msgid "Add new"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:56
+#: ../admin/views/GMWDViewMaps_gmwd.php:410
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:54
+#: ../admin/views/GMWDViewThemes_gmwd.php:55
+msgid "Publish"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:59
+#: ../admin/views/GMWDViewMaps_gmwd.php:411
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:57
+#: ../admin/views/GMWDViewThemes_gmwd.php:58
+msgid "Unpublish"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:62
+#: ../admin/views/GMWDViewMaps_gmwd.php:412
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:60
+#: ../admin/views/GMWDViewThemes_gmwd.php:61
+msgid "Duplicate"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:65
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:63
+#: ../admin/views/GMWDViewThemes_gmwd.php:64
+msgid "Do you want to delete selected items?"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:65
+#: ../admin/views/GMWDViewMaps_gmwd.php:413
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:63
+#: ../admin/views/GMWDViewThemes_gmwd.php:64
+msgid "Delete"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:79
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:78
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:327
+#: ../admin/views/GMWDViewThemes_gmwd.php:78
+msgid "Select All"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:98
+msgid "Shortcode"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:101
+msgid "PHP Function"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:179
+msgid "Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:179
+msgid "Settings"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:179
+msgid "Theme / Preview"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:189
+msgid " This section allows you to add/edit map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:197
+msgid "Add Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:200
+msgid "Edit Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:213
+msgid "Import file"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:220
+#: ../admin/views/GMWDViewMaps_gmwd.php:259
+msgid "Import"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:234
+msgid "Map title"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:247
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:210
+#: ../admin/views/GMWDViewThemes_gmwd.php:216 ../framework/functions.php:48
+msgid "Save"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:250
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:213
+#: ../admin/views/GMWDViewOptions_gmwd.php:43
+#: ../admin/views/GMWDViewThemes_gmwd.php:219
+msgid "Apply"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:253
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:216
+#: ../admin/views/GMWDViewThemes_gmwd.php:222
+msgid "Save as Copy"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:256
+msgid "Export"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:286
+#: ../admin/views/GMWDViewMarkers_gmwd.php:49
+#: ../admin/views/GMWDViewMarkers_gmwd.php:52
+#: ../admin/views/GMWDViewMarkers_gmwd.php:208
+msgid "Add Marker"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:292
+#: ../admin/views/GMWDViewRectangles_gmwd.php:31
+#: ../admin/views/GMWDViewRectangles_gmwd.php:34
+#: ../admin/views/GMWDViewRectangles_gmwd.php:122
+msgid "Add Rectangle"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:295
+#: ../admin/views/GMWDViewPolygons_gmwd.php:31
+#: ../admin/views/GMWDViewPolygons_gmwd.php:34
+#: ../admin/views/GMWDViewPolygons_gmwd.php:122
+msgid "Add Polygon"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:298
+#: ../admin/views/GMWDViewPolylines_gmwd.php:32
+#: ../admin/views/GMWDViewPolylines_gmwd.php:35
+#: ../admin/views/GMWDViewPolylines_gmwd.php:99
+msgid "Add Polyline"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:379
+#: ../admin/views/GMWDViewThemes_gmwd.php:1010
+#: ../admin/views/GMWDViewThemes_gmwd.php:1148
+#: ../frontend/views/GMWDViewFrontendMap.php:276
+#: ../frontend/views/GMWDViewFrontendMap.php:424
+msgid "Markers"
+msgstr "Маркеры"
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:379
+msgid "Circles"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:379
+msgid "Rectangles"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:379
+msgid "Polygons"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:379
+msgid "Polylines"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:400
+#: ../admin/views/GMWDViewMarkers_gmwd.php:70
+#: ../admin/views/GMWDViewThemes_gmwd.php:882
+#: ../admin/views/GMWDViewThemes_gmwd.php:1158
+#: ../frontend/views/GMWDViewFrontendMap.php:434
+#: ../frontend/views/GMWDViewFrontendMap.php:595
+msgid "Address"
+msgstr "Адрес"
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:406
+msgid "Filter by Address"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:409
+msgid "Add New"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:413
+#: ../admin/views/GMWDViewMaps_gmwd.php:562
+#: ../admin/views/GMWDViewMaps_gmwd.php:583
+#: ../admin/views/GMWDViewThemes_gmwd.php:1381
+msgid "Do you want to delete?"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:428
+msgid "Actions"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:448
+#: ../frontend/views/GMWDViewFrontendMap.php:322
+#: ../frontend/views/GMWDViewFrontendMap.php:465
+msgid "Load More"
+msgstr "Загрузи больше"
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:546
+msgid "Unublished"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:561
+#: ../admin/views/GMWDViewMaps_gmwd.php:582
+#: ../admin/views/GMWDViewThemes_gmwd.php:1380
+#: ../admin/views/GMWDViewThemes_gmwd.php:1388
+msgid "Edit"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:562
+#: ../admin/views/GMWDViewMaps_gmwd.php:583
+#: ../admin/views/GMWDViewThemes_gmwd.php:1381
+msgid "Remove"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:596
+msgid "Select Theme"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:611
+msgid "Manage"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:625
+msgid "Preview"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:636
+msgid "Please Save Your Changes to Preview the Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:656
+msgid "General"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:659
+msgid "Controls"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:662
+msgid "Layers"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:665
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Directions"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:668
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+#: ../admin/views/GMWDViewThemes_gmwd.php:876
+#: ../frontend/views/GMWDViewFrontendMap.php:589
+msgid "Store Locator"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:671
+msgid "Marker Listing"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:713
+msgid "Select the map type you want to use."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:713 ../widgets.php:116
+msgid "Map Type"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:727
+msgid "Determine the width of your map in percentages or pixel values."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:727 ../widgets.php:132
+msgid "Width"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:737
+msgid "Determine the height of your map in percentages or pixel values."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:737 ../widgets.php:140
+msgid "Height"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:743
+msgid "Set map center location."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:743
+#: ../admin/views/GMWDViewOptions_gmwd.php:110 ../google-maps-setup.php:345
+msgid "Center address"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:746
+#: ../admin/views/GMWDViewMarkers_gmwd.php:73
+#: ../admin/views/GMWDViewOptions_gmwd.php:113 ../google-maps-setup.php:349
+msgid "Or Right Click on the Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:750
+msgid "Set map center latitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:754
+msgid "Set map center longitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:758
+msgid "Set overall zoom level for your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:758
+#: ../admin/views/GMWDViewOptions_gmwd.php:125 ../google-maps-setup.php:363
+#: ../widgets.php:128
+msgid "Zoom Level"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:762
+msgid "Set a minimum zoom level imaginary for your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:762
+msgid "Minimum zoom"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:766
+msgid "Set a maximum zoom level imaginary for your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:766
+msgid "Maximum zoom"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:770
+msgid "Enable or disable mouse scroll-wheel scaling with Google Maps."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:770
+#: ../admin/views/GMWDViewOptions_gmwd.php:129 ../google-maps-setup.php:370
+msgid "Wheel Scrolling"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:773
+#: ../admin/views/GMWDViewMaps_gmwd.php:791
+#: ../admin/views/GMWDViewOptions_gmwd.php:132
+#: ../admin/views/GMWDViewThemes_gmwd.php:1478 ../google-maps-setup.php:374
+msgid "Off"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:775
+#: ../admin/views/GMWDViewMaps_gmwd.php:794
+#: ../admin/views/GMWDViewOptions_gmwd.php:134
+#: ../admin/views/GMWDViewThemes_gmwd.php:1477 ../google-maps-setup.php:378
+msgid "On"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:779
+msgid "Enable or disable Google Maps dragging on your website."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:779
+#: ../admin/views/GMWDViewOptions_gmwd.php:138 ../google-maps-setup.php:382
+msgid "Map Draggable"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:788
+msgid "Enable or disable Google Maps double-click zoom."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:788
+msgid "Map Double-Click Zoom"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:799
+msgid "Choose whether to open info window by hovering or a click."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:799
+msgid "Info Window Open"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:802
+msgid "Click"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:803
+msgid "Hover"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:809
+#: ../admin/views/GMWDViewMaps_gmwd.php:984
+#: ../admin/views/GMWDViewMaps_gmwd.php:1050
+msgid ""
+"Geolocation API call must be served from a secure context such as HTTPS."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:813
+msgid ""
+"With  W3C Geolocation standard you can detect the user's location on front "
+"end."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:813
+msgid "Geolocate User"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:822
+msgid "Select the alignment of your map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:822
+msgid "Alignment"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:845
+msgid ""
+"The Zoom control displays '+' and '-' buttons, to control the zoom level of "
+"the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:845
+msgid "Enable Zoom Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:854
+msgid "Select the zoom control position on your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:854
+msgid "Zoom Control Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:868
+msgid ""
+"The Map Type control lets the user choose a map type (such as ROADMAP or "
+"SATELLITE)."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:868
+msgid "Enable Map Type Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:877
+msgid "Select the Map Type control position on your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:877
+msgid "Map Type Control Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:891
+msgid "Select Map Type Control Style."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:891
+msgid "Map Type Control Style"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:905
+msgid "The Scale control displays a map scale element."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:905
+msgid "Enable Scale Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:914
+msgid ""
+"The Street View control contains a Pegman icon which can be dragged onto the "
+"map to enable Street View."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:914
+msgid "Enable Street View Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:923
+msgid "Select the Street View control position on your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:923
+msgid "Street View Control Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:937
+msgid "Fullscreen Control allows the user to open the map in fullscreen mode."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:937
+msgid "Fullscreen Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:946
+msgid "Select the Fullscreen control position on your Google Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:946
+msgid "Fullscreen Control Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:960
+msgid ""
+"The Rotate control contains a small circular icon which allows you to rotate "
+"maps containing oblique imagery."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:960
+msgid "Enable Rotate Control"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:991
+msgid "Enable direction winow for Map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:991
+msgid "Enable Directions"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1000
+msgid "Set the header title of your directions window."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1000
+#: ../admin/views/GMWDViewMaps_gmwd.php:1066
+#: ../admin/views/GMWDViewMaps_gmwd.php:1228
+msgid "Header Title"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1006
+msgid "Showcase the direction window."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1006
+msgid "Directions Window Open"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1015
+msgid "Set a width for direction window."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1015
+msgid "Directions Window Width"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1025
+msgid "Select the direction window position."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1025
+msgid "Direction Window Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1057
+msgid "Choose whether to display the store locator, including panels or not."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1057
+msgid "Enable Store Locator"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1066
+msgid "Set the header title of your store locator window."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1072
+msgid "Set the window width of your store locator."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1072
+msgid "Window Width"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1083
+msgid "Set the window position of your store locator."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1083
+msgid "Window Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1096
+msgid "Restrict to Country"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1100
+msgid "Set metric conversions for store locator."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1100
+msgid "Distance In"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1103
+msgid "Kilometers"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1104
+msgid "Miles"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1110
+msgid "Scale the area of the circle of store locator on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1110
+msgid "Circle Line Width"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1114
+msgid "Select the color of the circle line of store locator on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1114
+msgid "Circle Line Color"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1118
+msgid "Select the circle line opacity for store locator."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1118
+msgid "Circle Line Opacity"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1122
+msgid "Select the color fill of the circle of store locator on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1122
+msgid "Circle Fill Color"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1126
+msgid "Select the circle fill opacity for store locator."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1126
+msgid "Circle Fill Opacity"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1139
+msgid ""
+"Enable/Disable bicycle layer. The Bicycling layer object renders a layer of "
+"bike paths and/or bicycle-specific overlays into a common layer."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1139
+msgid "Enable Bicycle Layer"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1148
+msgid ""
+"Enable/Disable Traffic layer. It displays traffic conditions on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1148
+msgid "Enable Traffic Layer"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1157
+msgid ""
+"Enable/Disable The Transit layer. It displays the public transport network "
+"of your city on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1157
+msgid "Enable Transit Layer"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1166
+msgid "Display GeoRSS elements on Maps."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1166
+msgid "GeoRSS URL"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1170
+msgid ""
+"Display KmlLayer feature details on your Map, whose constructor takes the "
+"URL of a publicly accessible KML file."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1170
+msgid "KML URL"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1174
+msgid "The Fusion Tables Layer renders data contained in Google Fusion Tables."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1174
+msgid "Fusion Table Id"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1178
+msgid "Fill in fusion table field title."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1178
+msgid "Fusion Table Field Title"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1185
+msgid ""
+"Choose the clause operator which will be used for filtering values from "
+"fusion table."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1185
+msgid "Fusion Table Clause Operator"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1198
+msgid "Choose the field values which will serve as basis for filtering."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1198
+msgid "Fusion Table Conditional Value"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1215
+msgid "Select the list type of your markers."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1215
+msgid "List Type"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1228
+msgid "Set the header title of your marker listing."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1234
+msgid "Select the position for marker listing."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1234
+msgid "Marker List Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1238
+msgid "Bottom"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1241
+msgid "Top"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1248
+msgid " Disable/enable marker list on the map."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1248
+msgid "Enable List Inside Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1258
+msgid "Select the inside map marker list position."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1258
+msgid "Inside Map List Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1272
+msgid "Select the position of the advanced window."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1272
+msgid "Advanced Info Window Position"
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1286
+msgid "Disable/enable category filter."
+msgstr ""
+
+#: ../admin/views/GMWDViewMaps_gmwd.php:1286
+msgid "Enable Category Filter"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:33
+msgid " This section allows you to create, edit and delete marker categories."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:41
+#: ../gmwd_admin_class.php:135 ../gmwd_admin_class.php:270
+msgid "Marker Categories"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:89
+msgid "Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:102
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:349
+msgid "Parent Category"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:187
+msgid " This section allows you to add/edit marker category."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:195
+msgid "Add Marker Category"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:198
+msgid "Edit Marker Category"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:227
+msgid "Set marker category title."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:233
+msgid "Select parent category."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:233
+msgid "Select Parent Category"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:237
+msgid "Select Parent"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:241
+msgid "Upload category icon."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:241
+msgid "Category Icon"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:243
+#: ../admin/views/GMWDViewMarkers_gmwd.php:81
+#: ../admin/views/GMWDViewOptions_gmwd.php:93
+msgid "Upload Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:256
+msgid "Publish marker category."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkercategories_gmwd.php:309
+msgid "Select Marker Category"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:24
+msgid "Bounce"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:24
+msgid "Drop"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:34
+msgid "Insert"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:52
+#: ../admin/views/GMWDViewMarkers_gmwd.php:208
+msgid "Edit Marker"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:61
+msgid "Add new marker title for location."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:64
+msgid "Link the marker with URL."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:64
+msgid "Link Url"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:70
+msgid ""
+"Search for location or right-click on the map to bring address.  "
+"Alternatively, add a location manually."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:77
+msgid ""
+"Add an image to your marker in the info window and basic table marker list."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:77
+msgid "Marker Description Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:90
+msgid "Basic Table Marker List Type Image as Well."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:94
+msgid "Set latitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:94
+msgid "Latitude"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:96
+msgid "Add a category for location."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:96
+#: ../admin/views/GMWDViewThemes_gmwd.php:1157
+#: ../frontend/views/GMWDViewFrontendMap.php:433
+msgid "Category"
+msgstr "Категория"
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:99 ../widgets.php:174
+msgid "Select"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:110
+msgid "Set longitude if not specified automatically."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:110
+msgid "Longitude"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:113
+msgid "Choose a dynamic movement for marker."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:113
+msgid "Animation"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:126
+msgid "Add a description in the info window of a marker."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:126
+#: ../admin/views/GMWDViewThemes_gmwd.php:1159
+#: ../frontend/views/GMWDViewFrontendMap.php:435
+msgid "Description"
+msgstr "Описание"
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:132
+msgid "Open Editor"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:144
+msgid "Choose whether to open info by default or not."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:144
+msgid "Open Info Window by Default"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:153
+msgid "Choose a marker image from the list or upload yours."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:153
+msgid "Custom Icon:"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:156
+#: ../admin/views/GMWDViewOptions_gmwd.php:88
+msgid "Choose from Icons"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:158
+#: ../admin/views/GMWDViewOptions_gmwd.php:90
+msgid "Upload"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:166
+msgid "Upload Marker Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:170
+#: ../admin/views/GMWDViewMarkers_gmwd.php:275
+#: ../admin/views/GMWDViewOptions_gmwd.php:97
+msgid "Choose Marker Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:183
+msgid "Set a custom marker icon size."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:183
+msgid "Custom Icon Size"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:196
+msgid "Publish your marker."
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:248
+msgid "Standart"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:249
+msgid "Coloring"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:250
+msgid "Modern"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:251
+msgid "Cloth Texture"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:252
+msgid "Paper Texture"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:253
+msgid "Retro"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:254
+msgid "Wood Texture"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:255
+msgid "Added Markers"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:256
+msgid "Create Custom"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:313
+msgid "Click to Download Markers"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:342
+msgid "You Have Not Created Any Markers"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:364
+#: ../admin/views/GMWDViewThemes_gmwd.php:956
+#: ../admin/views/GMWDViewThemes_gmwd.php:1213
+#: ../admin/views/GMWDViewThemes_gmwd.php:1313
+msgid "Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:366
+msgid "Icon Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewMarkers_gmwd.php:372
+msgid "Get Image"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:29
+msgid "This section allows you to change general options."
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:34
+#: ../admin/views/GMWDViewOptions_gmwd.php:48 ../google-maps-setup.php:41
+#: ../google-maps-setup.php:275
+msgid "General Options"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:40
+msgid "Run Install Wizard "
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:49 ../google-maps-setup.php:45
+msgid "Global Options"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:57 ../google-maps-setup.php:286
+msgid "Set your map API key"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:57 ../google-maps-setup.php:286
+msgid "Map API Key"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:64 ../google-maps-setup.php:280
+msgid "Get Key"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:65 ../google-maps-setup.php:281
+msgid "For Getting API Key Read More in"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:66 ../framework/functions.php:43
+#: ../google-maps-setup.php:282
+msgid "User Manual"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:70 ../google-maps-setup.php:294
+msgid "Choose Your Map Language"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:70 ../google-maps-setup.php:294
+msgid "Map Language"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:84
+msgid "Upload a Custom Map Marker for Your Google Maps "
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:84
+msgid "Marker Default Icon"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:110 ../google-maps-setup.php:345
+msgid "Set Center Address of your Google Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:117 ../google-maps-setup.php:353
+msgid "Google Map's Center Latitude"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:121 ../google-maps-setup.php:358
+msgid "Google Map's Center Longitude"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:125 ../google-maps-setup.php:363
+msgid "Choose the Zoom Level of Your Google Maps"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:129 ../google-maps-setup.php:370
+msgid "Enable or Disable Mouse Scroll-Wheel Scaling"
+msgstr ""
+
+#: ../admin/views/GMWDViewOptions_gmwd.php:138 ../google-maps-setup.php:382
+msgid "Enable or Disable Google Maps Dragging"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:34
+#: ../admin/views/GMWDViewPolygons_gmwd.php:122
+msgid "Edit Polygon"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:44
+msgid "Add title for polygon."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:46
+msgid "Set line width for marked polygon area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:50
+msgid "Link the polygon with URL."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:52
+msgid "Choose a color of marked polygon line area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:56
+msgid "This box contains distance information of polygon area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:56
+#: ../admin/views/GMWDViewPolylines_gmwd.php:51
+msgid "Data"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:58
+msgid "Determine the line color opacity of polygon."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:62
+#: ../admin/views/GMWDViewPolylines_gmwd.php:57
+#: ../admin/views/GMWDViewRectangles_gmwd.php:68
+msgid "Remove/Insert markers."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:62
+#: ../admin/views/GMWDViewPolylines_gmwd.php:57
+#: ../admin/views/GMWDViewRectangles_gmwd.php:68
+msgid "Show markers:"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:69
+msgid "Determine polygon body color."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:73
+#: ../admin/views/GMWDViewPolylines_gmwd.php:68
+#: ../admin/views/GMWDViewRectangles_gmwd.php:80
+msgid "Choose whether to enable info windows or not."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:73
+#: ../admin/views/GMWDViewPolylines_gmwd.php:68
+#: ../admin/views/GMWDViewRectangles_gmwd.php:80
+msgid "Enable Info Windows"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:80
+msgid "Determine polygon body color opacity."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:87
+msgid "Determine polygon line color on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:93
+msgid "Determine polygon line color opacity on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:99
+msgid "Determine polygon body color on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:105
+msgid "Determine polygon body color opacity on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:111
+msgid "Publish your polygon."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:131
+#: ../admin/views/GMWDViewPolylines_gmwd.php:108
+#: ../admin/views/GMWDViewRectangles_gmwd.php:131
+msgid "Right Click on the Map to Insert a Vertex. "
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:132
+#: ../admin/views/GMWDViewPolylines_gmwd.php:109
+#: ../admin/views/GMWDViewRectangles_gmwd.php:132
+msgid "Right Click on a Vertex to Remove it."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolygons_gmwd.php:133
+#: ../admin/views/GMWDViewPolylines_gmwd.php:110
+#: ../admin/views/GMWDViewRectangles_gmwd.php:133
+msgid "Drag a Vertex to Move it."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:35
+#: ../admin/views/GMWDViewPolylines_gmwd.php:99
+msgid "Edit Polyline"
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:45
+msgid "Add title for polyline."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:47
+msgid "Set line width for marked polylines area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:51
+msgid "This box contains distance information of polylines area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:53
+msgid "Choose a color of marked polylines area."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:64
+msgid "Determine the line color opacity of polylines."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:75
+msgid "Determine polylines line color on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:82
+msgid "Determine polylines line color opacity on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewPolylines_gmwd.php:88
+msgid "Publish your polyline."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:34
+#: ../admin/views/GMWDViewRectangles_gmwd.php:122
+msgid "Edit Rectangle"
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:44
+msgid "Add a title for the marked rectangle area."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:46
+msgid "Set line width for marked rectangle area."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:50
+msgid "Link the rectangle area with URL."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:52
+msgid "Choose a color of marked rectangle area line."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:56
+msgid "Rectangle south west."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:56
+msgid "South West"
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:58
+msgid "Determine the line color opacity of rectangle."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:62
+msgid "Rectangle north east."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:62
+msgid "North East"
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:64
+msgid "Determine rectangle body color."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:75
+msgid "Determine rectangle body color opacity."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:87
+msgid "Determine rectangle line color on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:93
+msgid "Determine rectangle line color opacity on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:99
+msgid "Determine rectangle body color on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:105
+msgid "Determine rectangle body color opacity on hover."
+msgstr ""
+
+#: ../admin/views/GMWDViewRectangles_gmwd.php:111
+msgid "Publish your rectangle."
+msgstr ""
+
+#: ../admin/views/GMWDViewShortcode_gmwd.php:68 ../widgets.php:23
+msgid "Google Maps WD"
+msgstr ""
+
+#: ../admin/views/GMWDViewShortcode_gmwd.php:76 ../widgets.php:104
+msgid "Select Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewShortcode_gmwd.php:79
+msgid "-Select Map-"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:34
+msgid " This section allows you to create, edit and delete themes."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:42 ../gmwd_admin_class.php:138
+#: ../gmwd_admin_class.php:280
+msgid "Themes"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:100
+#: ../admin/views/GMWDViewThemes_gmwd.php:1428
+#: ../admin/views/GMWDViewThemes_gmwd.php:1435
+#: ../admin/views/GMWDViewThemes_gmwd.php:1443
+#: ../admin/views/GMWDViewThemes_gmwd.php:1453
+#: ../admin/views/GMWDViewThemes_gmwd.php:1460
+#: ../admin/views/GMWDViewThemes_gmwd.php:1469
+#: ../admin/views/GMWDViewThemes_gmwd.php:1481
+#: ../admin/views/GMWDViewThemes_gmwd.php:1487
+msgid "Default"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Map Styles"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Marker Listing Basic"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Marker Listing Advanced"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Marker Listing Carousel"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:170
+msgid "Marker Listing Inside Map"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:178
+msgid " This section allows you to add/edit theme."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:186
+msgid "Add Theme"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:189
+msgid "Edit Theme"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:203
+msgid "Theme title"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:525
+msgid "Detect the border radius of your map."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:525
+msgid "Border Radius"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:530
+msgid "Select Map Style"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:547
+msgid "Add Map Style"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:557
+msgid "Edit Map Style"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:562
+msgid ""
+"To Customize the Map Style Uncheck the Auto Generate Map Style Code box and "
+"edit the JavaScript."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:563
+msgid "Auto Generate Map Style Code?"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:590
+#: ../admin/views/GMWDViewThemes_gmwd.php:765
+#: ../admin/views/GMWDViewThemes_gmwd.php:1064
+msgid "Set title text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:590
+#: ../admin/views/GMWDViewThemes_gmwd.php:765
+#: ../admin/views/GMWDViewThemes_gmwd.php:950
+#: ../admin/views/GMWDViewThemes_gmwd.php:1064
+msgid "Title Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:596
+msgid "Set directions window background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:596
+msgid "Directions Window Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:602
+msgid "Set directions window border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:602
+msgid "Directions Window Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:608
+#: ../admin/views/GMWDViewThemes_gmwd.php:783
+msgid "Set input field border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:608
+#: ../admin/views/GMWDViewThemes_gmwd.php:783
+msgid "Input Field Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:615
+#: ../admin/views/GMWDViewThemes_gmwd.php:790
+msgid "Set input field border color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:615
+#: ../admin/views/GMWDViewThemes_gmwd.php:790
+msgid "Input Field Border Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:621
+#: ../admin/views/GMWDViewThemes_gmwd.php:796
+msgid "Set label text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:621
+#: ../admin/views/GMWDViewThemes_gmwd.php:796
+msgid "Label Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:627
+#: ../admin/views/GMWDViewThemes_gmwd.php:802
+msgid "Set label background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:627
+#: ../admin/views/GMWDViewThemes_gmwd.php:802
+msgid "Label Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:633
+#: ../admin/views/GMWDViewThemes_gmwd.php:808
+msgid "Set label border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:633
+#: ../admin/views/GMWDViewThemes_gmwd.php:808
+msgid "Label Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:639
+msgid "Set button alignment."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:639
+msgid "Button Alignment:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:649
+msgid "Set button width."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:649
+msgid "Button Width:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:655
+msgid "Set button border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:655
+msgid "Button Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:661
+msgid "Set button background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:661
+msgid "Button Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:667
+msgid "Set button text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:667
+msgid "Button Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:673
+#: ../admin/views/GMWDViewThemes_gmwd.php:860
+msgid "Set columns."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:673
+#: ../admin/views/GMWDViewThemes_gmwd.php:860
+msgid "Columns:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:676
+#: ../admin/views/GMWDViewThemes_gmwd.php:863
+msgid "One Column"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:678
+#: ../admin/views/GMWDViewThemes_gmwd.php:865
+msgid "Two Columns"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:689
+#: ../admin/views/GMWDViewThemes_gmwd.php:1027
+#: ../admin/views/GMWDViewThemes_gmwd.php:1046
+#: ../frontend/views/GMWDViewFrontendMap.php:307
+#: ../frontend/views/GMWDViewFrontendMap.php:695
+msgid "Get Directions"
+msgstr "Получить направление"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:695
+#: ../frontend/views/GMWDViewFrontendMap.php:701
+msgid "Mode"
+msgstr "Режим"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:699
+#: ../frontend/views/GMWDViewFrontendMap.php:705
+msgid "Driving"
+msgstr "Вождение"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:700
+#: ../frontend/views/GMWDViewFrontendMap.php:706
+msgid "Walking"
+msgstr "Гулять пешком"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:701
+#: ../frontend/views/GMWDViewFrontendMap.php:707
+msgid "Bicycling"
+msgstr "Езда на велосипеде"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:702
+#: ../frontend/views/GMWDViewFrontendMap.php:708
+msgid "Transit"
+msgstr "Транзит"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:708
+#: ../frontend/views/GMWDViewFrontendMap.php:714
+msgid "Avoid"
+msgstr "Избежать"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:712
+#: ../frontend/views/GMWDViewFrontendMap.php:718
+msgid "Tolls"
+msgstr "Пошлины"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:716
+#: ../frontend/views/GMWDViewFrontendMap.php:722
+msgid "Highways"
+msgstr "Автомобильные дороги"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:725
+#: ../frontend/views/GMWDViewFrontendMap.php:731
+msgid "From"
+msgstr "из"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:729
+#: ../admin/views/GMWDViewThemes_gmwd.php:738
+#: ../admin/views/GMWDViewThemes_gmwd.php:888
+#: ../frontend/views/GMWDViewFrontendMap.php:601
+#: ../frontend/views/GMWDViewFrontendMap.php:737
+#: ../frontend/views/GMWDViewFrontendMap.php:748
+msgid "Get My Location"
+msgstr "Получить Мое местоположение"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:734
+#: ../frontend/views/GMWDViewFrontendMap.php:742
+msgid "To"
+msgstr "к"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:745
+#: ../frontend/views/GMWDViewFrontendMap.php:755
+msgid "Go"
+msgstr "Идти"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:771
+msgid "Set store locator window background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:771
+msgid "Store Locator Window Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:777
+msgid "Set store locator window border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:777
+msgid "Store Locator Window Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:814
+msgid "Set buttons alignment."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:814
+msgid "Buttons Alignment:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:824
+msgid "Set buttons width."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:824
+msgid "Buttons Width:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:830
+msgid "Set buttons border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:830
+msgid "Buttons Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:836
+msgid "Set search button background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:836
+msgid "Search Button Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:842
+msgid "Set search button text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:842
+msgid "Search Button Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:848
+msgid "Set reset button background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:848
+msgid "Reset Button Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:854
+msgid "Set reset button text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:854
+msgid "Reset Button Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:893
+#: ../frontend/views/GMWDViewFrontendMap.php:606
+msgid "Radius"
+msgstr "Радиус"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:914
+#: ../frontend/views/GMWDViewFrontendMap.php:627
+msgid "Categories"
+msgstr "Категории"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:931
+#: ../admin/views/GMWDViewThemes_gmwd.php:1151
+#: ../frontend/views/GMWDViewFrontendMap.php:427
+#: ../frontend/views/GMWDViewFrontendMap.php:637
+msgid "Search"
+msgstr "Поиск"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:932
+#: ../frontend/views/GMWDViewFrontendMap.php:638
+msgid "Reset"
+msgstr "Сброс"
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:950
+msgid "Set title text color. "
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:956
+#: ../admin/views/GMWDViewThemes_gmwd.php:1070
+msgid "Set table background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:962
+msgid "Set marker title color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:962
+msgid "Marker Title Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:968
+msgid "Set marker description color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:968
+msgid "Marker Description Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:974
+msgid "Set directions button border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:974
+msgid "Directions Button Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:980
+msgid "Set directions button width."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:980
+msgid "Directions Button Width:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:986
+msgid "Set directions button height."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:986
+msgid "Directions Button Height:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:992
+msgid "Set directions button background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:992
+msgid "Directions Button Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:998
+msgid "Set directions button text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:998
+msgid "Directions Button Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1070
+msgid "Table Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1076
+msgid "Set table border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1076
+msgid "Table Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1082
+msgid "Set table text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1082
+msgid "Table Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1088
+msgid "Set table header background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1088
+msgid "Table Header Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1094
+msgid "Set table header text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1094
+msgid "Table Header Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1100
+msgid "Set advanced info window background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1100
+msgid "Advanced Info Window Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1106
+msgid "Set advanced info window title text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1106
+msgid "Advanced Info Window Title Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1112
+msgid "Set advanced info window title background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1112
+msgid "Advanced Info Window Title Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1118
+msgid "Set advanced info window description text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1118
+msgid "Advanced Info Window Description Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1124
+msgid "Set advanced info window directions text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1124
+msgid "Advanced Info Window Directions Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1130
+msgid "Set advanced info window directions background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1130
+msgid "Advanced Info Window Directions Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1136
+msgid "Set advanced info window directions border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1136
+msgid "Advanced Info Window Directions Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1207
+#: ../admin/views/GMWDViewThemes_gmwd.php:1307
+msgid "Set text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1207
+#: ../admin/views/GMWDViewThemes_gmwd.php:1307
+msgid "Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1213
+#: ../admin/views/GMWDViewThemes_gmwd.php:1313
+msgid "Set background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1219
+msgid "Set hover text color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1219
+msgid "Hover Text Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1225
+msgid "Set hover background color."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1225
+msgid "Hover Background Color:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1231
+msgid "Set items count."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1231
+msgid "Items Count:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1237
+msgid "Set items height."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1237
+msgid "Items Height:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1243
+msgid "Set items border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1243
+msgid "Items Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1320
+msgid "Set width."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1320
+msgid "Width:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1326
+msgid "Set height."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1326
+msgid "Height:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1332
+msgid "Set border radius."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1332
+msgid "Border Radius:"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1388
+msgid "Add"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1393
+msgid "Set map style feature type."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1393
+msgid "Map Style Feature Type"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1408
+msgid "Set map style element type."
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1408
+msgid "Map Style Element Type"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1422
+msgid "Stylers"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1425
+msgid "Change Color"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1432
+msgid "Change Gamma"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1440
+msgid "Change Hue"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1447
+msgid "Change Invert Lightness"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1457
+msgid "Change Lightness"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1466
+msgid "Change Saturation"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1474
+msgid "Change Visibility"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1479
+msgid "Simplified"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1485
+msgid "Change Weight"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1487
+msgid "Integers Greater than or Equal to Zero"
+msgstr ""
+
+#: ../admin/views/GMWDViewThemes_gmwd.php:1508
+msgid "Add Feature Style"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:31
+#: ../admin/views/GMWDViewUninstall_gmwd.php:127
+msgid "Uninstall Google Maps WD"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:35
+msgid "support team"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:36
+msgid "Contact us"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:38
+#, php-format
+msgid ""
+"Before uninstalling the plugin, please Contact our %s. We'll do our best to "
+"help you out with your issue. We value each and every user and value what's "
+"right for our users in everything we do.<br />\n"
+"                    However, if anyway you have made a decision to uninstall "
+"the plugin, please take a minute to %s and tell what you didn't like for our "
+"plugins further improvement and development. Thank you !!!"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:42
+msgid ""
+"Deactivating Google Maps WD plugin does not remove any data that may have "
+"been created. To completely remove this plugin, you can uninstall it here."
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:45
+msgid "WARNING:"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:46
+msgid ""
+"Once uninstalled, this can't be undone. You should use a Database Backup "
+"plugin of WordPress to back up all the data first."
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:49
+msgid "The following Database Tables will be deleted:"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:54
+msgid "Database Tables"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:76
+msgid "Delete the folder containing uploaded markers."
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:81
+msgid "Do you really want to uninstall Google Maps WD?"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:87
+msgid "UNINSTALL"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:115
+msgid "The following Database Tables successfully deleted:"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:128
+msgid "Click Here"
+msgstr ""
+
+#: ../admin/views/GMWDViewUninstall_gmwd.php:128
+msgid ""
+" To Finish the Uninstallation and Google Maps WD will be Deactivated "
+"Automatically."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:263
+msgid "Item(s) Succesfully Dublicated."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:271
+msgid "Item(s) Succesfully Published."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:275
+msgid "Item(s) Succesfully Unublished."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:279
+msgid "You Must Select At Least One Item. "
+msgstr ""
+
+#: ../framework/GMWDHelper.php:283
+msgid "Successfully Imported."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:287
+msgid "Unexepted File."
+msgstr ""
+
+#: ../framework/GMWDHelper.php:290
+msgid "Options Succesfully Saved."
+msgstr ""
+
+#: ../framework/functions.php:40 ../google-maps-setup.php:279
+msgid "Important. API key is required for Google Maps to work."
+msgstr ""
+
+#: ../framework/functions.php:41
+msgid "GET API KEY FOR FREE"
+msgstr ""
+
+#: ../framework/functions.php:42
+msgid "For getting API key read more in"
+msgstr ""
+
+#: ../framework/functions.php:48
+msgid "API Key"
+msgstr ""
+
+#: ../framework/functions.php:52
+msgid "It may take up to 5 minutes for API key change to take effect."
+msgstr ""
+
+#: ../frontend/models/GMWDModelFrontendMap.php:28
+#: ../frontend/models/GMWDModelFrontendMap.php:48
+msgid "Invalid Request"
+msgstr "Неверный Запрос"
+
+#: ../frontend/models/GMWDModelFrontendMap.php:31
+msgid "Please Select Map"
+msgstr "Пожалуйста, выберите карту"
+
+#: ../frontend/views/GMWDViewFrontendMap.php:226
+msgid "Filter By Category"
+msgstr "Фильтр по категории"
+
+#: ../gmwd_admin_class.php:141
+msgid "Options"
+msgstr ""
+
+#: ../gmwd_admin_class.php:143
+msgid "Featured Plugins"
+msgstr ""
+
+#: ../gmwd_admin_class.php:145
+msgid "Featured Themes"
+msgstr ""
+
+#: ../gmwd_admin_class.php:147
+msgid "Uninstall"
+msgstr ""
+
+#: ../gmwd_class.php:66
+msgid "Could not load the localization file: "
+msgstr ""
+
+#: ../google-maps-setup.php:49
+msgid "Ready!"
+msgstr ""
+
+#: ../google-maps-setup.php:108 ../preview.php:91
+msgid "Google Maps WD &rsaquo; Setup Wizard"
+msgstr ""
+
+#: ../google-maps-setup.php:186
+msgid "We welcome you in Google Maps WD plugin! "
+msgstr ""
+
+#: ../google-maps-setup.php:189
+msgid "We appreciate your confidence in choosing Google Maps WD! "
+msgstr ""
+
+#: ../google-maps-setup.php:193
+msgid ""
+"We will do the utmost to provide you with the best service possible. In this "
+"quick wizard we are going to help with the basic configurations of the "
+"plugin. You may skip it or follow our simple instruction, which will take "
+"couple of moments. "
+msgstr ""
+
+#: ../google-maps-setup.php:196
+msgid ""
+"Click the \"Let's start\" button to jump into the wizard or skip it to go "
+"back to the WordPress dashboard. You will be able to come back anytime in "
+"the future!  "
+msgstr ""
+
+#: ../google-maps-setup.php:201
+msgid "Let's Start!"
+msgstr ""
+
+#: ../google-maps-setup.php:203
+msgid "Skip for Now"
+msgstr ""
+
+#: ../google-maps-setup.php:289
+msgid "Once saved, it may take up to 5 minutes for your map to display."
+msgstr ""
+
+#: ../google-maps-setup.php:309 ../google-maps-setup.php:404
+msgid "Continue"
+msgstr ""
+
+#: ../google-maps-setup.php:311 ../google-maps-setup.php:406
+msgid "Skip this step"
+msgstr ""
+
+#: ../google-maps-setup.php:340
+msgid "Default Options"
+msgstr ""
+
+#: ../google-maps-setup.php:402
+msgid "Back"
+msgstr ""
+
+#: ../google-maps-setup.php:447
+msgid "All Set!"
+msgstr ""
+
+#: ../google-maps-setup.php:451
+msgid ""
+"Now you are ready to create your first Google Map!\n"
+"                                Click the blue button below and start "
+"building your awesome map!"
+msgstr ""
+
+#: ../google-maps-setup.php:460
+msgid "Create Your First Map!"
+msgstr ""
+
+#: ../update/updates.php:85
+msgid "Updates"
+msgstr ""
+
+#: ../update/updates.php:278
+msgid ""
+"Plugin for creating Google maps with advanced markers, custom layers and "
+"overlays for   your website."
+msgstr ""
+
+#: ../widgets.php:145
+msgid "Text Above Map"
+msgstr ""
+
+#: ../widgets.php:149
+msgid "Text Below Map"
+msgstr ""
+
+#: ../widgets.php:174
+msgid "Page"
+msgstr ""
+
+#: ../widgets.php:174
+msgid "Custom URL"
+msgstr ""
+
+#: ../widgets.php:174
+msgid "Lightbox"
+msgstr ""

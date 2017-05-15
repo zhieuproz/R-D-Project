@@ -1,0 +1,18 @@
+
+/* This sheet is used for timeline function */
+/*element overlay all screen and cannot be displayed*/
+
+#lbtimeline
+{
+	white-space: nowrap;
+	vertical-align: baseline;
+	font-weight: bold;
+	line-height: 14px;
+	display: inline-block;
+	font-size: 11.844px;
+	padding: 2px 4px;
+	background:#999;
+	color:#FFF;
+	margin-bottom:5px;
+}
+

@@ -1,0 +1,99 @@
+﻿#organswrapper {
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0 0;
+	background-color: transparent;
+	min-width: 220px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+#organswrapper svg {
+	max-height: 100%;
+	width: 100%;
+	margin: 0;
+}
+.go_int, .go_ext{
+	fill: #72B8FC;
+	-webkit-transition: fill 0.1s ease;
+	-moz-transition: fill 0.1s ease;
+	-o-transition: fill 0.1s ease;
+	transition: fill 0.1s ease;
+	cursor: pointer;
+}
+.go_int:hover, .go_ext:hover{
+	fill: #0081FF;
+}
+.inactive-side{
+	fill: #B2B2B2;
+}
+@media screen and (max-width: 320px){
+	#organswrapper svg {
+		height:440px;
+	}
+}
+@media screen and (max-width: 400px) and (min-width: 321px) {
+	#organswrapper svg {
+		height:510px;
+	}
+}
+@media screen and (max-width: 480px) and (min-width: 401px) {
+	#organswrapper svg {
+		height:660px;
+	}
+}
+@media screen and (max-width: 568px) and (min-width: 481px) {
+	#organswrapper svg {
+		height:800px;
+	}
+}
+@media screen and (max-width: 685px) and (min-width: 569px) {
+	#organswrapper svg {
+		height:970px;
+	}
+}
+@media screen and (max-width: 767px) and (min-width: 686px) {
+	#organswrapper svg {
+		height:980px;
+	}
+}
+@media screen and (min-width: 768px) {
+	#organswrapper svg {
+		height:1080px;
+	}
+}
+#organs-tip {
+    font: 14px/16px Trebuchet MS, Helvetica, Arial, sans-serif;
+    display: none;
+    padding: 3px;
+    border: 1px solid #EBECED;
+    color: #edeef0;
+    z-index: 1000;
+    float: left;
+    position: absolute;
+    /*gradient color*/
+    background: rgb(73, 73, 73);
+    background: -moz-linear-gradient(top, rgba(73, 73, 73, 1) 0%, rgba(101, 101, 101, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(73, 73, 73, 1)), color-stop(100%, rgba(101, 101, 101, 1)));
+    background: -webkit-linear-gradient(top, rgba(73, 73, 73, 1) 0%, rgba(101, 101, 101, 1) 100%);
+    background: -o-linear-gradient(top, rgba(73, 73, 73, 1) 0%, rgba(101, 101, 101, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(73, 73, 73, 1) 0%, rgba(101, 101, 101, 1) 100%);
+    background: linear-gradient(to bottom, rgba(73, 73, 73, 1) 0%, rgba(101, 101, 101, 1) 100%);
+    word-break: keep-all;
+    white-space: nowrap;
+		box-shadow:1px 2px 4px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:2px 3px 6px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow:2px 3px 6px rgba(0, 0, 0, 0.5);
+}
+#organs-tip p {
+	margin: 0!important;
+}
+#organs-tip img {
+	float: left;
+	padding: 3px;
+}
