@@ -13,16 +13,14 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1>
-					<?php 
-						global $current_user;
-      					get_currentuserinfo();
-						echo $current_user->display_name. "'s Bucket Model";
+					<?php
+						echo" Control Counsellor";
 					?>
                 
                 </h1>
 					
                 <?php
-					echo '<a style="font-size:18px;" href="'; ?> <?php echo site_url(); ?> <?php echo '"> Home </a>'. ' / '. $current_user->display_name. "'s Body Signs Result";			
+					echo '<a style="font-size:18px;" href="'; ?> <?php echo site_url(); ?> <?php echo '"> Home </a>'. ' / '. $current_user->display_name. "Control Counsellor";			
 				 ?>
                 
 			</div>
@@ -36,6 +34,20 @@
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
 		<div class="col-md-12"> 
+		
+		<div id="result"></div>
+		
+		<div class="alert alert-info" role="alert" hidden="true">
+		  <strong>Added successfully!</strong>
+		</div>
+		
+		<div class="alert alert-success" role="alert" hidden="true">
+		  <strong>Edited successfully !</strong> 
+		</div>
+		
+		<div class="alert alert-danger" role="alert" hidden="true">
+		  <strong>Deleted successfully !</strong> 
+		</div>
 			<?php
 					Add_Counsellor();
 					$i = 0;
@@ -62,7 +74,7 @@
 						echo '<section id="counsellor-list" class="cd-container" hidden="true">';
 
 						Show_Counsellor();
-
+						
 						echo '</section>';
 
 					}
@@ -70,7 +82,8 @@
 					
 			
 			?>
-					
+
+			 
 
 
 		</div>

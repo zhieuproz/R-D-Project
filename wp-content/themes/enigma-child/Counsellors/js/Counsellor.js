@@ -31,6 +31,8 @@ $(document).ready(function()
 
 });
 
+
+
 function Add_Counsellor()
 {
 	var Name = $("#First_Name").val();
@@ -39,7 +41,18 @@ function Add_Counsellor()
 	var Experience = $("#experience").val();
 	var Fee = $("#fee").val();
 	var Information = $("#information").val();
-		
+	
+    var PhotoInput = document.getElementById('Photo');
+    var PhotoName = PhotoInput.value.split(/(\\|\/)/g).pop(); // get file name of photo
+	
+	
+	var Photo = $('#Photo').prop('files')[0];//get photo 
+	var form_data = new FormData();
+
+	form_data.append('file', Photo);
+	form_data.append('action', 'UploadPhoto');// add photo and action to form_data
+	
+	
 	if( Name === "")
 	{
 		alert("please input Counsellor Name");
@@ -81,12 +94,36 @@ function Add_Counsellor()
 		$("#information").focus();	
 		return false;
 	}
-	
+	else if( PhotoName === "")
+	{
+		alert("Please Choose Counsellor's Image");
+		return false;
+	}
+
+
+
 	else
 	{
 		
-		// AJAX	Request
-			$.ajax({
+		// AJAX	Request , In this stage , I create 2 Ajax request : 1 for photo upload and another for counsellor information upload
+		
+			jQuery.ajax // photo upload 
+			({
+				url: AJAX.url,
+				type: 'post',
+				contentType: false,
+				processData: false,
+				data: form_data,
+				success: function (resp) 
+				{
+					$(".alert-info").show();
+					setTimeout(function() { $(".alert-info").hide(); }, 10000);
+				} 
+
+			});
+		
+		
+			$.ajax({ // Counsellor upload
 			type : 'POST',
 			data : {'action' : 'processing',
 					'Counsellor_Name' : Name,
@@ -95,6 +132,7 @@ function Add_Counsellor()
 					'Counsellor_Experience' : Experience,
 					'Counsellor_Fee' : Fee,
 					'Counsellor_Information' : Information,
+					'Counsellor_Photo' : PhotoName
 					},
 			url : AJAX.url,
 			success : function (resp){
@@ -107,16 +145,24 @@ function Add_Counsellor()
 				$("#Adding_Counsellor").modal("hide"); // fade out Modal
 
 			}
-		});
+			});
+		}
+		
+			//alert("Cannot Upload Photo");
+			
+		
+
 		return true;
-	}
+	
 }
 
-$(document).ready(function() { // Editing a Counsellor
-    $(document).on('click','.EditC', function()
+
+
+function EditCounsellor(id) // Editting Counsellor
+{
+	$(document).ready(function()
 	{
 		$("#Adding_Counsellor").modal();
-        var id = $(this).attr('EditCounsellor');
 		
 		$('#Counsellor-Submit').hide(); // show update button and hide post button 
 		$('#Counsellor-Update').show();
@@ -124,62 +170,102 @@ $(document).ready(function() { // Editing a Counsellor
 		
 	 	$('#First_Name').focus(); 
 		
-		var OldName = $(this).attr('EditCName'); //get current data
-		var OldSpecialty = $(this).attr('EditCSpecialty');
-		var OldRegion = $(this).attr('EditCRegion');
-		var OldExperience = $(this).attr('EditCExperience');
-		var OldFee = $(this).attr('EditCFee');
-		var OldInformation = $(this).attr('EditCInfor');
 		
-		console.log(id);
+		var OldName = $('#name-'+id).text(); //get current data
+		var OldSpecialty = $('#specialty-'+id).text();
+		var OldRegion = $('#region-'+id).text();
+		var OldExperience = $('#year-'+id).text();
+		var OldFee = $('#fee-'+id).text();
+		var OldInformation = $('#infor-'+id).text();
 		
+	
 		$("#First_Name").val(OldName); //set current data to adding box 
 		$("#specialty").val(OldSpecialty);
 		$("#region").val(OldRegion);
 		$("#experience").val(OldExperience);
 		$("#fee").val(OldFee);
 		$("#information").val(OldInformation);
+		
+		$('#counsellor-id-row').val(id);	
+	});
+}
 
-		$(document).on('click','#Counsellor-Update', function()
+$(document).ready(function() // Go on Editting Counsellor
+{
+	$('#Counsellor-Update').click(function()
+	{
+		var NewName = $("#First_Name").val(); // get new data after changing by users to process
+		var NewSpecialty = $('#specialty').val();
+		var NewRegion = $('#region').val();
+		var NewExperience = $('#experience').val();
+		var NewFee = $('#fee').val();
+		var NewInformation = $('#information').val();
+		
+		
+		var NewPhotoInput = document.getElementById('Photo');
+		var NewPhotoName = NewPhotoInput.value.split(/(\\|\/)/g).pop(); // get file name of photo
+		
+		if(NewPhotoName === "")
 		{
-			var NewName = $("#First_Name").val(); // get new data after changing by users to process
-			var NewSpecialty = $('#specialty').val();
-			var NewRegion = $('#region').val();
-			var NewExperience = $('#experience').val();
-			var NewFee = $('#fee').val();
-			var NewInformation = $('#information').val();
-			
-			$.ajax({
-				type : 'POST',
-				dataType:'text',
-				data : {'action' : 'processing',
-						'idEditCounsellor' : id,
-						'NameC' : NewName,
-						'SpecialtyC' : NewSpecialty,
-						'RegionC' : NewRegion,
-						'ExperienceC' : NewExperience,
-						'FeeC' : NewFee,
-						'InforC' : NewInformation
-						},
-				url : AJAX.url,
-				success : function (resp){
-					$('#counsellor-list').html(resp);
-					
-					$("#First_Name").val(''); 
-					$("#specialty").val('');
-					$("#region").val('');
-					$("#experience").val('');
-					$("#fee").val('');
-					$("#information").val('');
-					
-					$("#Adding_Counsellor").modal("hide");
-			   	
-			}
-		});	
-		});
-    });
-});
+			alert("Please choose an image");
+			return false;
+		}
 
+		var Photo = $('#Photo').prop('files')[0];//get photo 
+		var form_data = new FormData();
+
+		form_data.append('file', Photo);
+		form_data.append('action', 'UploadPhoto');// add photo and action to form_data
+
+		var id = $('#counsellor-id-row').val();
+		
+		jQuery.ajax // photo upload 
+		({
+				url: AJAX.url,
+				type: 'post',
+				contentType: false,
+				processData: false,
+				data: form_data,
+				success: function () 
+				{
+					$(".alert-success").show();
+					setTimeout(function() { $(".alert-success").hide(); }, 10000);
+				}
+		});
+		
+		
+		$.ajax({
+			type : 'POST',
+			dataType:'text',
+			data : {'action' : 'processing',
+					'idEditCounsellor' : id,
+					'NameC' : NewName,
+					'SpecialtyC' : NewSpecialty,
+					'RegionC' : NewRegion,
+					'ExperienceC' : NewExperience,
+					'FeeC' : NewFee,
+					'InforC' : NewInformation,
+					'PhotoC' : NewPhotoName
+					},
+			url : AJAX.url,
+			success : function (resp){
+					
+
+				$('#counsellor-list').html(resp);
+
+				$("#First_Name").val(''); 
+				$("#specialty").val('');
+				$("#region").val('');
+				$("#experience").val('');
+				$("#fee").val('');
+				$("#information").val('');
+
+				$("#Adding_Counsellor").modal("hide");
+
+		}
+	});	 
+	});
+});
 
 
 $(document).ready(function() //Deleting Counsellor
@@ -200,9 +286,16 @@ $(document).ready(function() //Deleting Counsellor
 					},
 			url : AJAX.url,
 			success : function (resp){
+				$(".alert-danger").show();
+				setTimeout(function() { $(".alert-danger").hide(); }, 10000);
 				$('#counsellor-list').html(resp);
 			}
 			});
 		}
 	});
 });
+
+
+
+
+                

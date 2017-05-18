@@ -124,6 +124,8 @@ function CounsellorStyle()
 function CounsellorJS()
 {
 	wp_register_script( 'Main_Counsellor',get_stylesheet_directory_uri() . '/Counsellors/js/Counsellor.js', 'all' );// Counsellor
+	wp_register_script( 'Main_Counsellor','http://code.jquery.com/jquery-latest.min.js', 'all' );// Counsellor
+	
 	
 	wp_enqueue_script( 'Main_Counsellor' );
 }
@@ -600,7 +602,7 @@ function Add_Counsellor()
 				 	echo'</div>'; // End Header
 	
 				echo' <div class="modal-body">'; // Body
-echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" >'; // starting form
+echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctype="multipart/form-data" >'; // starting form
 										
 		
 											echo '<div class="row">'; // 1st row (First Name - Photo)
@@ -613,13 +615,14 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" >'; //
 													echo '</div>';
 												
 												echo '</div>';
-	
+						
+												
 	
 												echo '<div class="col-xs-6">';  // Photo
 
 													echo '<div id="counsellor-photo" class="form-group">';
 														echo '<h5><span class="label label-default">Upload Photo</span> (*)</h5>'; 
-														echo '<input type="file" name="photo" id="photo" class="file"><br>';
+													   echo'<input type="file" id="Photo" name="upload">';
 													echo '</div>';
 												
 												echo '</div>';
@@ -701,6 +704,9 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" >'; //
 											echo'</div>';// end 6th row
 	
 	
+											echo '<input  type="hidden" name="counsellor-id-row" id="counsellor-id-row" class="form-control">';
+								
+	
 				echo '  </div>'; // End Body
 	
 	
@@ -708,6 +714,7 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" >'; //
 												echo '<span style="color:red; font-weight:bold; float:left;">'.'(*)-Required'.'</span>';
 	
 												echo '<input class="btn btn-primary" type="button" value="Update Information" id="Counsellor-Update" style="float:right; margin-right:13px; margin-top:-5px;" />';
+				
 	
 												echo '<input onclick="return Add_Counsellor();" class="btn btn-primary" type="button" name="Counsellor-Submit" id="Counsellor-Submit" value="Add Counsellor" style="float:right; margin-right:13px; margin-top:-5px;"/>'; // careful type of this input is "button" instead of submit
 										echo '</form>'; // ending form
@@ -722,6 +729,7 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" >'; //
 
 function Show_Counsellor()
 {
+	
 	include("Database/ConnectDatabase.php");
 	global $current_user; // get current user information
 	get_currentuserinfo();
@@ -743,27 +751,29 @@ function Show_Counsellor()
 		
 		while($row = mysqli_fetch_array($sql))
 		{
+			
+			
 			echo'<tr>';
-				echo'<td>'.$row['Picture'].'</td>';
-				echo'<td>'.$row['First_Name'].'</td>';
-				echo'<td>'.$row['Area_Specialty'].'</td>';
-				echo'<td>'.$row['Region'].'</td>';
-				echo'<td>'.$row['Year_Experience'].'</td>';
-				echo'<td>'.$row['Fee'].'</td>';
-				echo'<td>'.$row['Brief_Information'].'</td>';
+				echo'<td id="pic-'.$row['ID'].'">' .'<img title="'.$row['Picture'].'" width="100" src="'.site_url(). '/wp-content/uploads/Counsellors/'.$row['Picture'].'"/>'.'</td>';
+				echo'<td id="name-'.$row['ID'].'">' .$row['First_Name'].'</td>';
+				echo'<td id="specialty-'.$row['ID'].'">' .$row['Area_Specialty'].'</td>';
+				echo'<td id="region-'.$row['ID'].'">' .$row['Region'].'</td>';
+				echo'<td id="year-'.$row['ID'].'">' .$row['Year_Experience'].'</td>';
+				echo'<td id="fee-'.$row['ID'].'">' .$row['Fee'].'</td>';
+				echo'<td id="infor-'.$row['ID'].'">' .$row['Brief_Information'].'</td>';
 			
 				echo '<form name="Edit-counsellor">';
 			
 				echo '<td>
-				<input  value="Edit" class="EditC btn btn-default" type="button" EditCounsellor="'.$row['ID'].'" EditCName="'.$row['First_Name'].'" EditCSpecialty="'.$row['Area_Specialty'].'" EditCRegion="'.$row['Region'].'" EditCExperience="'.$row['Year_Experience'].'" EditCFee="'.$row['Fee'].'" EditCInfor="'.$row['Brief_Information'].'" />
+				<input onclick="EditCounsellor('.$row['ID'].');"  value="Edit" class="EditC btn btn-warning" type="button"/>
 				
-				<input value="Delete" class="DelC btn btn-default" type="button" DelCounsellor="'.$row['ID'].'" />
+				<input value="Delete" class="DelC btn btn-danger" type="button" DelCounsellor="'.$row['ID'].'" />
 				
 				</td>';
 				echo '</form>';
 			echo'</tr>';
 		}	
-		echo'</table>';
+		echo'</table>'; 
 	}
 	
 }
@@ -954,7 +964,7 @@ function processing() // this function is to return values from server of Ajax R
 		}
 	}
 	
-	if(isset($_POST['Counsellor_Name']) && ($_POST['Counsellor_Specialty']) && ($_POST['Counsellor_Region']) && ($_POST['Counsellor_Experience']) && ($_POST['Counsellor_Fee']) && ($_POST['Counsellor_Information']) ) // add counsellor process
+	if(isset($_POST['Counsellor_Name']) && ($_POST['Counsellor_Specialty']) && ($_POST['Counsellor_Region']) && ($_POST['Counsellor_Experience']) && ($_POST['Counsellor_Fee']) && ($_POST['Counsellor_Information']) && ($_POST['Counsellor_Photo']) ) // add counsellor process
 	{
 		$name = $_POST['Counsellor_Name'];
 		$specialty = $_POST['Counsellor_Specialty'];
@@ -962,7 +972,7 @@ function processing() // this function is to return values from server of Ajax R
 		$experience = $_POST['Counsellor_Experience'];
 		$fee = $_POST['Counsellor_Fee'];
 		$infor = $_POST['Counsellor_Information'];
-
+		$photo = $_POST['Counsellor_Photo'];
 		
 		global $current_user; // get current user information
 		get_currentuserinfo();
@@ -983,7 +993,7 @@ function processing() // this function is to return values from server of Ajax R
 		
 	}
 	
-	if(isset($_POST['idEditCounsellor']) && ($_POST['NameC']) && ($_POST['SpecialtyC']) && ($_POST['RegionC']) && ($_POST['ExperienceC']) && ($_POST['FeeC']) && ($_POST['InforC'])) //Editing Counsellor process
+	if(isset($_POST['idEditCounsellor']) || ($_POST['NameC']) || ($_POST['SpecialtyC']) || ($_POST['RegionC']) || ($_POST['ExperienceC']) || ($_POST['FeeC']) || ($_POST['InforC']) && ($_POST['PhotoC']) ) //Editing Counsellor process
 	{
 		$idC = $_POST['idEditCounsellor'];
 		$nameC = $_POST['NameC'];
@@ -992,10 +1002,11 @@ function processing() // this function is to return values from server of Ajax R
 		$experienceC = $_POST['ExperienceC'];
 		$feeC = $_POST['FeeC'];
 		$inforC = $_POST['InforC'];
+		$photoC = $_POST['PhotoC'];		
+		
+		$sql = "UPDATE counsellor SET First_Name = '$nameC' , Picture = '$photoC' ,  Area_Specialty = '$specialtyC' , Region = '$regionC' , Year_Experience = '$experienceC' , Fee = '$feeC' , Brief_Information = '$inforC' where ID = '$idC' ";
 		
 		
-		$sql = "UPDATE counsellor SET First_Name = '$nameC' , Area_Specialty = '$specialtyC' , Region = '$regionC' , Year_Experience = '$experienceC' , Fee = '$feeC' , Brief_Information = '$inforC' where ID = '$idC'";
-		echo $idC;
 		$Result = mysqli_query($conn,$sql);
 		if(!$Result)
 		{
@@ -1024,6 +1035,51 @@ function processing() // this function is to return values from server of Ajax R
 		}
 		die();
 	}
+
 }
 add_action('wp_ajax_processing', 'processing');
+
+
+function wpse_183245_upload_dir( $dirs ) // Temporarily change dir path to store image
+{
+    $dirs['subdir'] = '/Counsellors';
+    $dirs['path'] = $dirs['basedir'] . '/Counsellors';
+    $dirs['url'] = $dirs['baseurl'] . '/Counsellors';
+	
+    return $dirs;
+}
+
+
+function UploadPhoto()// Upload Counsellor Image by Ajax 
+{
+	add_filter( 'upload_dir', 'wpse_183245_upload_dir' );
+	$support_title = !empty($_POST['supporttitle']) ? 
+	$_POST['supporttitle'] : 'Support Title';
+
+	if (!function_exists('wp_handle_upload')) 
+	{
+		require_once(ABSPATH . 'wp-admin/includes/file.php');
+	}
+	
+	$uploadedfile = $_FILES['file'];
+	$upload_overrides = array('test_form' => false);
+	$movefile = wp_handle_upload($uploadedfile, $upload_overrides);
+
+	
+	if ($movefile && !isset($movefile['error'])) 
+	{
+		
+		echo "File Upload Successfully";
+	}
+	
+	else 
+	{
+		echo $movefile['error'];
+	}
+	die();
+	
+	remove_filter( 'upload_dir', 'wpse_183245_upload_dir' );
+}
+add_action( 'wp_ajax_UploadPhoto','UploadPhoto' );
+add_action( 'wp_ajax_nopriv_UploadPhoto','UploadPhoto' );
 ?>
