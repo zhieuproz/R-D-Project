@@ -22,7 +22,7 @@
 	table.dupx-header {border-top-left-radius:5px; border-top-right-radius:5px; width:100%; box-shadow:0 5px 3px -3px #999;	background-color:#F1F1F1; font-weight:bold;}
     .dupx-header-version {white-space:nowrap; color:#777; font-size:11px; font-style:italic; text-align:right;  padding:0 15px 5px 0; line-height:14px; font-weight:normal;}
 	.dupx-header-version a {color:#555;}
-    div.dupx-logfile-link {float:right; font-weight:normal; font-size:12px}
+    div.dupx-logfile-link {float:right; font-weight:normal; font-size:11px; font-style:italic}
 	div#progress-area {padding:5px; margin:150px 0 0 0px; text-align:center;}
 	div#ajaxerr-data {padding:5px; height:350px; width:99%; border:1px solid silver; border-radius:5px; background-color:#efefef; font-size:13px; overflow-y:scroll; line-height:24px}
 
@@ -65,12 +65,14 @@
     div.dlg-serv-info div.hdr {background-color: #dfdfdf; font-weight: bold; margin-top:5px; border-radius: 4px; padding:2px 5px 2px 5px; border: 1px solid silver; font-size: 16px}
 	div#modal-window div.modal-title {background-color:#D0D0D0}
 	div#modal-window div.modal-text {padding-top:10px !important}
+	div.archive-onlydb {color:#DB4B38; font-weight:normal; position:absolute; top:5px; right:20px; font-style:italic; font-size:11px}
 	
 	/* ======================================
 	STEP 1 VIEW
     ====================================== */
-    table.s1-archive-local td {padding:5px}
-	table.s1-archive-local td:first-child {font-weight:bold; min-width:50px}
+	table.s1-archive-local {width:100%}
+    table.s1-archive-local td {padding:4px 4px 4px 4px}
+	table.s1-archive-local td:first-child {font-weight:bold; width:55px}
     div#s1-area-sys-setup {padding:5px 0 0 10px}
 	div#s1-area-sys-setup div.info-top {text-align:center; font-style:italic; font-size:11px; padding:0 5px 5px 5px}
 	table.s1-checks-area {width:100%; margin:0; padding:0}
@@ -164,17 +166,16 @@
 	table.s4-report-results th, table.s4-report-errs th {background-color:#efefef; padding:0px; font-size:13px; padding:0px}
 	table.s4-report-results td, table.s4-report-errs td {padding:0px; white-space:nowrap; border:1px solid #dfdfdf; text-align:center; font-size:12px}
 	table.s4-report-results td:first-child {text-align:left; font-weight:bold; padding-left:3px}
-	div.s4-err-title {width:100%; background-color: #dfdfdf; font-weight: bold; margin:-5px 0 15px 0; padding:3px 0 1px 3px; border-radius: 4px; font-size:13.5px}
+	div.s4-err-title {background-color:#dfdfdf; font-weight: bold; margin:-3px 0 15px 0; padding:5px; border-radius:3px; font-size:13px}
 
 	div.s4-err-msg {padding:8px;  display:none; border:1px dashed #999; margin:10px 0 20px 0px; border-radius:5px;}
 	div.s4-err-msg div.content{padding:5px; font-size:11px; line-height:17px; max-height:125px; overflow-y:scroll; border:1px solid silver; margin:3px;  }
-	div.s4-err-msg div.info-error{padding:7px; background-color:#EAA9AA; border:1px solid silver; border-radius:5px; font-size:12px; line-height:16px }
-	div.s4-err-msg div.info-notice{padding:7px; background-color:#FCFEC5; border:1px solid silver; border-radius:5px; font-size:12px; line-height:16px;}
+	div.s4-err-msg div.info-error{padding:7px; background-color:#f9c9c9; border:1px solid silver; border-radius:2px; font-size:12px; line-height:16px }
+	div.s4-err-msg div.info-notice{padding:7px; background-color:#FCFEC5; border:1px solid silver; border-radius:2px; font-size:12px; line-height:16px;}
 	table.s4-final-step {width:100%;}
 	table.s4-final-step td {padding:5px 15px 5px 5px}
 	table.s4-final-step td:first-child {white-space:nowrap;}
-	div.s4-go-back {border-bottom:1px dotted #dfdfdf; border-top:1px dotted #dfdfdf; margin:auto; text-align:center; font-size: 12px}
-	div.s4-btns-msg {text-align: center; font-size:10px; color:#777; margin:5px 0 15px 0}
+	div.s4-go-back {border-top:1px solid #dfdfdf; margin:auto; font-style:italic; font-size:10px; color:#333}
 	a.s4-final-btns {display: block; width:135; padding:5px; line-height: 1.4; background-color:#F1F1F1; border:1px solid silver;
 		color: #000; box-shadow: 5px 5px 5px -5px #949494; text-decoration: none; text-align: center; border-radius: 4px;
 	}

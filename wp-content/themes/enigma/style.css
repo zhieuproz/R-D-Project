@@ -4,7 +4,7 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma is an incredibly superfine multipurpose responsive theme with WPML Compatible & designed with a lot of care and love.The Theme has support of "WOOCOMMERCE" You can use it for your business, portfolio, blogging or any type of site.Enigma is Responsive and flexible based on BOOTSTRAP CSS framework that adapts your website to mobile devices and the desktop or any other viewing environment.We focused on usability across various devices, starting with smartphones.Enigma is a Cross-Browser Compatible theme that works on All leading web browsers.Enigma is Retina ready.It has 4 page layouts, 2 page templates, It has five widgets available (one sidebar, four footers), and using the sidebar widget also enables you to make a two-column design. In addition, footer widget display is automatically adjusted depending on how many are used.Enigma has  Filkr as a custom widget to showing up your Flikr Photos .Custom menus to choose the menu in Primary Location that is in Header area of the site.In header area and footer of the theme offers Social Media Links to add your Social Links here. Enigma  focusing on business template, awesome Caroufredsel slider, Powerful but simple Theme Options for full CMS control option to match your logo & website, wide layout, light & dark color skin, translation ready and many more. You can check the demo at http://demo.weblizar.com/enigma-free-theme/.
-Version: 2.8.6
+Version: 3.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,rtl-language-support , E-Commerce , Education , Entertainment , Portfolio
@@ -42,7 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: 0 0 1px rgba(0,0,0,0.01);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
-	
 }
 p , .textwidget{
 font-family: 'Open Sans', sans-serif;
@@ -2462,6 +2461,12 @@ padding-top: 20px;
     width: 100% !important;
     height: 25% !important;
 }
+img.custom-logo {
+    width: 100px;
+    margin: 10px;
+    height: 90px;
+}
+
 @media(min-width:992px){
 .logocenter{
 	float:right;

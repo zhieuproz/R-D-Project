@@ -124,10 +124,10 @@ function CounsellorStyle()
 function CounsellorJS()
 {
 	wp_register_script( 'Main_Counsellor',get_stylesheet_directory_uri() . '/Counsellors/js/Counsellor.js', 'all' );// Counsellor
-	wp_register_script( 'Main_Counsellor','http://code.jquery.com/jquery-latest.min.js', 'all' );// Counsellor
-	
+	wp_register_script( 'Book_Counsellor',get_stylesheet_directory_uri() . '/Counsellors/js/Booking_Counsellor.js', 'all' );
 	
 	wp_enqueue_script( 'Main_Counsellor' );
+	wp_enqueue_script( 'Book_Counsellor' );
 }
 
 	add_action( 'wp_enqueue_scripts', 'CounsellorJS' );
@@ -174,7 +174,6 @@ echo '<form id="timeline-form" name="PostingForm" class="form-group">'; // start
 
 														echo '<label id="lbtimeline">Date of Post</label>'.' ' . '(*)'.	'';  
 														echo '<input type="text" name="date" id="date" class="form-control">';
-
 													echo '</div>';
 												echo '</div>'; // end date 
 											echo'</div>';// end 1st row
@@ -198,19 +197,27 @@ echo '<form id="timeline-form" name="PostingForm" class="form-group">'; // start
 												echo '<div class="col-xs-12">'; //Feeling
 
 														echo '<div id="main-feeling">'; 
-															echo '<label id="lbtimeline">Your Feeling : </label>'.' '; 
+															echo'<label id="lbtimeline">Your Feeling : </label>'.' '; 
 															echo'<label class="radio-inline">Sad<input value="Sad" type="radio" name="Feeling" ></label>';
 															echo'<label class="radio-inline">Happy<input value="Happy" type="radio" name="Feeling"></label>';
 															echo'<label class="radio-inline">Anxiety<input value="Anxiety" type="radio" name="Feeling"></label>';
 															echo'<label class="radio-inline">Angry<input value="Angry" type="radio" name="Feeling"></label>';	
 															echo'<label class="radio-inline">Relaxed<input value="Relaxed" type="radio" name="Feeling"></label>';
 														echo '</div>';
-															
 														  
 												echo '</div>'; // end Feeling
 											echo '</div>';	 // end 2nd row
 	
-
+											/*echo '<div class="row">'; // Timeline Scale
+												echo '<div class="col-xs-12">';
+													echo '<div id="main-scale" class="form-group">';
+														echo'<label for="timeline-scale">Timline Scale:</label>';
+														echo'<input type="text" name="timeline-scale" id="timeline-scale" readonly style="border:0; color:#f6931f; font-weight:bold;"/>';
+													echo '</div>';
+												echo '</div>';
+											echo '</div>'; // End Timeline Scale*/
+	
+	
 											echo '<div class="row">'; // 3nd row ( Content )
 												echo '<div class="col-xs-12">'; //content
 
@@ -223,7 +230,7 @@ echo '<form id="timeline-form" name="PostingForm" class="form-group">'; // start
 											echo '</div>';	 // end 3nd row
 				echo '  </div>'; // End Body
 	
-	
+				echo '<input currentid=""  type="hidden" name="timeline-id-row" id="timeline-id-row">';
 				echo ' <div class="modal-footer">'; // Footer 
 												echo '<span style="color:red; font-weight:bold; float:left;">'.'(*)-Required'.'</span>';
 	
@@ -313,142 +320,142 @@ function Add_BodySign()
 	global $current_user; // get current user information
 	get_currentuserinfo();
 	$user = $current_user->display_name;
-	
-	if(isset($_POST['feeling']) || ($_POST['head']) || ($_POST['neck']) || ($_POST['chest']) || ($_POST['abdomen']) || ($_POST['shoulder']) || ($_POST['arm']) || ($_POST['upperlime']) || ($_POST['lowerlimb']) || ($_POST['leg']) || ($_POST['hand']) || ($_POST['lungs']) || ($_POST['thought']) || ($_POST['heart']) || ($_POST['stomach']) || ($_POST['feeling_icon']) )
-	{ // Validating isset variables from Body_Sign page will not be executed because php will behave with variable 0 = not isset , so we must use || instead of &&
-		
-		//Getting Value from Sliders
-		$Icon = $_POST['feeling_icon'];
-		$Feeling = $_POST['feeling']; // Head Area 
-		$Head = $_POST['head'];
-		
-		$Neck = $_POST['neck']; // Body Area
-		$Chest = $_POST['chest'];
-		$Abdomen = $_POST['abdomen'];
-		$Shoulder = $_POST['shoulder'];
-		$Arm = $_POST['arm'];
-		
-		$Upperlime = $_POST['upperlime']; //Limbs Area
-		$Lowerlime = $_POST['lowerlimb'];
-		$Leg= $_POST['leg'];
-		$Hand= $_POST['hand'];
-		
-		$Lungs = $_POST['lungs']; // internal Area
-		$Heart = $_POST['heart'];
-		$Stomach = $_POST['stomach'];
-		$Thought = $_POST['thought'];
-		$ThoughtArea = $_POST['thought-area'];
-		
-		$GLOBALS['CountOrgans'] = 0 ; //Counting how many organs were submitted
-		$GLOBALS['Sum'] = 0;
-		
-		if($Feeling != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Feeling;
-		}
-	
-		if($Head != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Head;
-		}
-		
-		if($Neck != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Neck;
-		}
-		
-		if($Chest != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Chest;
-		}
-		
-		if($Abdomen != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Abdomen;
-		}
-		
-		if($Shoulder != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Shoulder;
-		}
-		
-		if($Arm != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Arm;
-		}
+			
+		if(isset($_POST['feeling']) || ($_POST['head']) || ($_POST['neck']) || ($_POST['chest']) || ($_POST['abdomen']) || ($_POST['shoulder']) || ($_POST['arm']) || ($_POST['upperlime']) || ($_POST['lowerlimb']) || ($_POST['leg']) || ($_POST['hand']) || ($_POST['lungs']) || ($_POST['thought']) || ($_POST['heart']) || ($_POST['stomach']) || ($_POST['feeling_icon']) )
+		{ // Validating isset variables from Body_Sign page will not be executed because php will behave with variable 0 = not isset , so we must use || instead of &&
 
-		if($Upperlime != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Upperlime;
+			//Getting Value from Sliders
+			$Icon = $_POST['feeling_icon'];
+			$Feeling = $_POST['feeling']; // Head Area 
+			$Head = $_POST['head'];
+
+			$Neck = $_POST['neck']; // Body Area
+			$Chest = $_POST['chest'];
+			$Abdomen = $_POST['abdomen'];
+			$Shoulder = $_POST['shoulder'];
+			$Arm = $_POST['arm'];
+
+			$Upperlime = $_POST['upperlime']; //Limbs Area
+			$Lowerlime = $_POST['lowerlimb'];
+			$Leg= $_POST['leg'];
+			$Hand= $_POST['hand'];
+
+			$Lungs = $_POST['lungs']; // internal Area
+			$Heart = $_POST['heart'];
+			$Stomach = $_POST['stomach'];
+			$Thought = $_POST['thought'];
+			$ThoughtArea = $_POST['thought-area'];
+
+			$GLOBALS['CountOrgans'] = 0 ; //Counting how many organs were submitted
+			$GLOBALS['Sum'] = 0;
+
+			if($Feeling != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Feeling;
+			}
+
+			if($Head != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Head;
+			}
+
+			if($Neck != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Neck;
+			}
+
+			if($Chest != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Chest;
+			}
+
+			if($Abdomen != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Abdomen;
+			}
+
+			if($Shoulder != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Shoulder;
+			}
+
+			if($Arm != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Arm;
+			}
+
+			if($Upperlime != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Upperlime;
+			}
+
+			if($Lowerlime != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Lowerlime;
+			}
+
+			if($Leg != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Leg;
+			}
+
+			if($Hand != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Hand;
+			}
+
+			if($Lungs != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Lungs;
+			}
+
+			if($Heart != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Heart;
+			}
+
+			if($Stomach != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Stomach;
+			}
+
+			if($Thought != 0 )
+			{
+				$GLOBALS['CountOrgans'] += 1;
+				$GLOBALS['Sum'] += $Thought;
+			}
+
+			$GLOBALS["Average"] = $GLOBALS['Sum']/$GLOBALS['CountOrgans'];
+			$avg = $GLOBALS["Average"];
+			$avg = (float)$avg;
+			$date = date("m/d/Y");
+
+			$sql = "INSERT INTO bodysign(User_Identify , Average ,Feeling ,  Feeling_Scale , Head_Scale , Thought , Thought_Scale , Neck_Scale , Chest_Scale  , Abdomen_Scale , Shoulder_Scale , Arm_Scale , Lungs_Scale , Heart_Scale , Stomach_Scale , Date)VALUES('$user' , '$avg','$Icon','$Feeling','$Head','$ThoughtArea' , '$Thought' , '$Neck' ,'$Chest' , '$Abdomen' , '$Shoulder' , '$Arm' , '$Lungs' , '$Heart' ,'$Stomach' ,'$date')";
+			$Result = mysqli_query($conn,$sql);
+			if(!$Result)
+			{
+				echo "cannot insert new body signs";	
+			}
+			else
+			{
+				header('Location:'.get_site_url().'/Bucket-Model'); //preventing popup form resubmission
+			}
+
 		}
-		
-		if($Lowerlime != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Lowerlime;
-		}
-		
-		if($Leg != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Leg;
-		}
-		
-		if($Hand != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Hand;
-		}
-		
-		if($Lungs != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Lungs;
-		}
-		
-		if($Heart != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Heart;
-		}
-		
-		if($Stomach != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Stomach;
-		}
-		
-		if($Thought != 0 )
-		{
-			$GLOBALS['CountOrgans'] += 1;
-			$GLOBALS['Sum'] += $Thought;
-		}
-		
-		$GLOBALS["Average"] = $GLOBALS['Sum']/$GLOBALS['CountOrgans'];
-		$avg = $GLOBALS["Average"];
-		$avg = (float)$avg;
-		$date = date("m/d/Y");
-		
-		$sql = "INSERT INTO bodysign(User_Identify , Average ,Feeling ,  Feeling_Scale , Head_Scale , Thought , Thought_Scale , Neck_Scale , Chest_Scale  , Abdomen_Scale , Shoulder_Scale , Arm_Scale , Lungs_Scale , Heart_Scale , Stomach_Scale , Date)VALUES('$user' , '$avg','$Icon','$Feeling','$Head','$ThoughtArea' , '$Thought' , '$Neck' ,'$Chest' , '$Abdomen' , '$Shoulder' , '$Arm' , '$Lungs' , '$Heart' ,'$Stomach' ,'$date')";
-		$Result = mysqli_query($conn,$sql);
-		if(!$Result)
-		{
-			echo "cannot insert new body signs";	
-		}
-		else
-		{
-			header('Location:'.get_site_url().'/Bucket-Model'); //preventing popup form resubmission
-		}
-		
-	}
 	
 }
 
@@ -588,6 +595,7 @@ function Show_BodySign($avg)
 function Add_Counsellor()
 {
 //Button
+	
 		echo '<button type="button" class="btn btn-info btn-md" id="AddingCounsellor"  data-target="#Adding_Counsellor">Add Counsellor</button>';
 	
 	// Modal
@@ -605,7 +613,7 @@ function Add_Counsellor()
 echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctype="multipart/form-data" >'; // starting form
 										
 		
-											echo '<div class="row">'; // 1st row (First Name - Photo)
+											echo '<div class="row">'; // 1st row (First Name - Email)
 
 												echo '<div class="col-xs-6">';  // First Name 
 
@@ -617,32 +625,41 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctyp
 												echo '</div>';
 						
 												
-	
-												echo '<div class="col-xs-6">';  // Photo
+												echo '<div class="col-xs-6">'; 
 
-													echo '<div id="counsellor-photo" class="form-group">';
-														echo '<h5><span class="label label-default">Upload Photo</span> (*)</h5>'; 
-													   echo'<input type="file" id="Photo" name="upload">';
+													echo '<div id="counsellor-email" class="form-group">';
+														echo '<h5><span class="label label-default">Email</span> (*)</h5>'; 
+														echo '<input type="email" name="email" id="Email" class="form-control">';
 													echo '</div>';
-												
-												echo '</div>';
-	
 
+												echo'</div>';// end Email row
+	
 											echo'</div>';// end 1st row
 
 	
+	
+											echo '<div class="row">'; // 2nd row (Area specialty-Photo)
 
-											echo '<div class="row">'; // 2nd row (Area specialty)
-
-												echo '<div class="col-xs-6">'; 
+												echo '<div class="col-xs-6">'; //Area Specialty
 
 													echo '<div id="counsellor-specialty" class="form-group">';
 														echo '<h5><span class="label label-default">Specialty Area</span> (*)</h5>'; 
 														echo '<input type="text" name="specialty" id="specialty" class="form-control">';
 													echo '</div>';
+	
+												
+												echo '</div>';
+	
+													echo '<div class="col-xs-6">';  // Photo
 
+													echo '<div id="counsellor-photo" class="form-group">';
+														echo '<h5><span class="label label-default">Upload Photo</span> (*)</h5>'; 
+													   echo'<input type="file" id="Photo" name="upload">';
+													echo '</div>';
 
 												echo '</div>';
+	
+
 
 											echo'</div>';// end 2nd row
 
@@ -657,6 +674,12 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctyp
 													echo '</div>';
 
 
+												echo '</div>';
+	
+													echo '<div class="col-xs-6">'; 
+	
+													echo '<div hidden class="alert alert-warning"><strong>If you do not choose an image, Counsellor Image will keep using the current one!</strong> </div>';
+	
 												echo '</div>';
 
 											echo'</div>';// end 3rd row
@@ -704,7 +727,7 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctyp
 											echo'</div>';// end 6th row
 	
 	
-											echo '<input  type="hidden" name="counsellor-id-row" id="counsellor-id-row" class="form-control">';
+											echo '<input CurrentName=""  type="hidden" name="counsellor-id-row" id="counsellor-id-row" class="form-control">';
 								
 	
 				echo '  </div>'; // End Body
@@ -713,7 +736,7 @@ echo '<form id="counsellor-form" name="CounsellorForm" class="form-group" enctyp
 				echo ' <div class="modal-footer">'; // Footer 
 												echo '<span style="color:red; font-weight:bold; float:left;">'.'(*)-Required'.'</span>';
 	
-												echo '<input class="btn btn-primary" type="button" value="Update Information" id="Counsellor-Update" style="float:right; margin-right:13px; margin-top:-5px;" />';
+												echo '<input class="EditC btn btn-primary" type="button" value="Update Information" id="Counsellor-Update" style="float:right; margin-right:13px; margin-top:-5px;" />';
 				
 	
 												echo '<input onclick="return Add_Counsellor();" class="btn btn-primary" type="button" name="Counsellor-Submit" id="Counsellor-Submit" value="Add Counsellor" style="float:right; margin-right:13px; margin-top:-5px;"/>'; // careful type of this input is "button" instead of submit
@@ -741,6 +764,7 @@ function Show_Counsellor()
 			echo'<tr>';
 				echo'<td><b>Photo</b></td>';
 				echo'<td><b>First Name</b></td>';
+				echo'<td><b>Email</b></td>';
 				echo'<td><b>Area_Specialty</b></td>';
 				echo'<td><b>Region</b></td>';
 				echo'<td><b>Experience</b></td>';
@@ -756,6 +780,7 @@ function Show_Counsellor()
 			echo'<tr>';
 				echo'<td id="pic-'.$row['ID'].'">' .'<img title="'.$row['Picture'].'" width="100" src="'.site_url(). '/wp-content/uploads/Counsellors/'.$row['Picture'].'"/>'.'</td>';
 				echo'<td id="name-'.$row['ID'].'">' .$row['First_Name'].'</td>';
+				echo'<td id="email-'.$row['ID'].'">' .$row['Email'].'</td>';
 				echo'<td id="specialty-'.$row['ID'].'">' .$row['Area_Specialty'].'</td>';
 				echo'<td id="region-'.$row['ID'].'">' .$row['Region'].'</td>';
 				echo'<td id="year-'.$row['ID'].'">' .$row['Year_Experience'].'</td>';
@@ -765,9 +790,9 @@ function Show_Counsellor()
 				echo '<form name="Edit-counsellor">';
 			
 				echo '<td>
-				<input onclick="EditCounsellor('.$row['ID'].');"  value="Edit" class="EditC btn btn-warning" type="button"/>
+				<input currentname="'.$row['Picture'].'" onclick="EditCounsellor('.$row['ID'].');"  value="Edit" class="EditC1 btn btn-warning" type="button"/>
 				
-				<input value="Delete" class="DelC btn btn-danger" type="button" DelCounsellor="'.$row['ID'].'" />
+				<input value="Delete" NamePhoto="'.$row['Picture'].'" class="DelC btn btn-danger" type="button" DelCounsellor="'.$row['ID'].'" />
 				
 				</td>';
 				echo '</form>';
@@ -777,6 +802,7 @@ function Show_Counsellor()
 	}
 	
 }
+
 
 // Process AJAX Technique
 function processing() // this function is to return values from server of Ajax Request in posting/Editing/Deleting
@@ -885,6 +911,8 @@ function processing() // this function is to return values from server of Ajax R
 		die();
 	} // end deleting timeline process
 	
+
+	
 	if(isset($_POST['search_date'])) // searching old body sign process
 	{
 		global $current_user; // get current user information
@@ -964,7 +992,7 @@ function processing() // this function is to return values from server of Ajax R
 		}
 	}
 	
-	if(isset($_POST['Counsellor_Name']) && ($_POST['Counsellor_Specialty']) && ($_POST['Counsellor_Region']) && ($_POST['Counsellor_Experience']) && ($_POST['Counsellor_Fee']) && ($_POST['Counsellor_Information']) && ($_POST['Counsellor_Photo']) ) // add counsellor process
+	if(isset($_POST['Counsellor_Name']) && ($_POST['Counsellor_Specialty']) && ($_POST['Counsellor_Region']) && ($_POST['Counsellor_Experience']) && ($_POST['Counsellor_Fee']) && ($_POST['Counsellor_Information']) && ($_POST['Counsellor_Photo']) && ($_POST['Counsellor_Email']) ) // add counsellor process
 	{
 		$name = $_POST['Counsellor_Name'];
 		$specialty = $_POST['Counsellor_Specialty'];
@@ -973,12 +1001,13 @@ function processing() // this function is to return values from server of Ajax R
 		$fee = $_POST['Counsellor_Fee'];
 		$infor = $_POST['Counsellor_Information'];
 		$photo = $_POST['Counsellor_Photo'];
+		$email = $_POST['Counsellor_Email'];
 		
 		global $current_user; // get current user information
 		get_currentuserinfo();
 		$user = $current_user->display_name;
 		
-		$sql = "INSERT INTO counsellor(First_Name, Picture, Area_Specialty , Region , Year_Experience , Fee , Brief_Information )VALUES('$name','$photo','$specialty','$region' , '$experience' , '$fee' , '$infor')";
+		$sql = "INSERT INTO counsellor(First_Name, Email , Picture, Area_Specialty , Region , Year_Experience , Fee , Brief_Information )VALUES('$name','$email', '$photo','$specialty','$region' , '$experience' , '$fee' , '$infor')";
 		$Result = mysqli_query($conn,$sql);
 		
 		if(!$Result)
@@ -993,7 +1022,7 @@ function processing() // this function is to return values from server of Ajax R
 		
 	}
 	
-	if(isset($_POST['idEditCounsellor']) || ($_POST['NameC']) || ($_POST['SpecialtyC']) || ($_POST['RegionC']) || ($_POST['ExperienceC']) || ($_POST['FeeC']) || ($_POST['InforC']) && ($_POST['PhotoC']) ) //Editing Counsellor process
+	if(isset($_POST['idEditCounsellor']) || ($_POST['NameC']) || ($_POST['SpecialtyC']) || ($_POST['RegionC']) || ($_POST['ExperienceC']) || ($_POST['FeeC']) || ($_POST['InforC']) || ($_POST['PhotoC']) || ($_POST['currentphoto']) || ($_POST['EmailC']) ) //Editing Counsellor process
 	{
 		$idC = $_POST['idEditCounsellor'];
 		$nameC = $_POST['NameC'];
@@ -1002,16 +1031,38 @@ function processing() // this function is to return values from server of Ajax R
 		$experienceC = $_POST['ExperienceC'];
 		$feeC = $_POST['FeeC'];
 		$inforC = $_POST['InforC'];
-		$photoC = $_POST['PhotoC'];		
+		$photoC = $_POST['PhotoC'];
+		$emailC = $_POST['EmailC'];
 		
-		$sql = "UPDATE counsellor SET First_Name = '$nameC' , Picture = '$photoC' ,  Area_Specialty = '$specialtyC' , Region = '$regionC' , Year_Experience = '$experienceC' , Fee = '$feeC' , Brief_Information = '$inforC' where ID = '$idC' ";
+		$delphoto = $_POST['currentphoto'];
+		if($photoC == '')
+		{
+			$sql = "UPDATE counsellor SET First_Name = '$nameC' ,  Area_Specialty = '$specialtyC' , Region = '$regionC' , Year_Experience = '$experienceC' , Fee = '$feeC' , Brief_Information = '$inforC' , Email = '$emailC' where ID = '$idC' ";
+		}
 		
+		else
+		{
+				$path = ABSPATH.'wp-content/uploads/Counsellors/' .$delphoto;  // delete photo on Wordpress
+				if(file_exists($path))
+				{
+					unlink($path);
+				}
+				else
+				{
+					echo 'photo is not exist!!';
+				}
+			
+				$sql = "UPDATE counsellor SET First_Name = '$nameC' , Picture = '$photoC' ,  Area_Specialty = '$specialtyC' , Region = '$regionC' , Year_Experience = '$experienceC' , Fee = '$feeC' , Brief_Information = '$inforC' where ID = '$idC' ";
+				
+		}
+			
 		
 		$Result = mysqli_query($conn,$sql);
 		if(!$Result)
 		{
 			echo "cannot Edit Counsellor";	
 		}
+		
 		else
 		{
 			Show_Counsellor();
@@ -1020,19 +1071,34 @@ function processing() // this function is to return values from server of Ajax R
 	} // end editing Counsellor process
 	
 	
-	if(isset($_POST['DelCounsellor']) ) // Deleting Counsellor process
+	if(isset($_POST['DelCounsellor']) && $_POST['namephoto'] ) // Deleting Counsellor process
 	{
 		$del = $_POST['DelCounsellor'];
-		$sql = "DELETE FROM counsellor where ID like '$del'";
-		$Result = mysqli_query($conn,$sql);
-		if(!$Result)
+		$photodel = $_POST['namephoto'];
+		
+		$path = ABSPATH.'wp-content/uploads/Counsellors/' . $photodel;  // delete photo on Wordpress
+		if(file_exists($path))
 		{
-			echo "cannot delete this counsellor";	
+			unlink($path);
+			$sql = "DELETE FROM counsellor where ID like '$del'";
+			$Result = mysqli_query($conn,$sql);
+			if(!$Result)
+			{
+				echo "cannot delete this counsellor";	
+			}
+			
+			else
+			{
+
+				Show_Counsellor();
+			}
 		}
+		
 		else
 		{
-			Show_Counsellor();
+			echo "This photo is not exist!!!";
 		}
+		
 		die();
 	}
 
@@ -1052,7 +1118,8 @@ function wpse_183245_upload_dir( $dirs ) // Temporarily change dir path to store
 
 function UploadPhoto()// Upload Counsellor Image by Ajax 
 {
-	add_filter( 'upload_dir', 'wpse_183245_upload_dir' );
+	add_filter( 'upload_dir', 'wpse_183245_upload_dir' ); // add filter to temporarily change path of photo
+	
 	$support_title = !empty($_POST['supporttitle']) ? 
 	$_POST['supporttitle'] : 'Support Title';
 
@@ -1062,24 +1129,66 @@ function UploadPhoto()// Upload Counsellor Image by Ajax
 	}
 	
 	$uploadedfile = $_FILES['file'];
+	$namephoto = $_FILES['file']['name'];
 	$upload_overrides = array('test_form' => false);
-	$movefile = wp_handle_upload($uploadedfile, $upload_overrides);
-
 	
-	if ($movefile && !isset($movefile['error'])) 
+	$path = ABSPATH.'wp-content/uploads/Counsellors/' . $namephoto;
+	if(file_exists($path))
 	{
-		
-		echo "File Upload Successfully";
+		echo "Cannot Upload Photo";
+		die();
 	}
 	
-	else 
+	else
 	{
-		echo $movefile['error'];
+		$movefile = wp_handle_upload($uploadedfile, $upload_overrides);
+		if ($movefile && !isset($movefile['error'])) 
+		{
+			echo "Photo Uploaded Successfully";
+		}
+	
+		else 
+		{
+			echo $movefile['error'];
+		}
+		die();
 	}
-	die();
 	
 	remove_filter( 'upload_dir', 'wpse_183245_upload_dir' );
 }
+
+
+function send_mail($to, $subject, $content) 
+{
+	$body = $content;
+	$headers = array('Content-Type: text/html; charset=UTF-8', 'From:Rainbow-Insight <no-reply@domain.com>');
+	wp_mail($to, $subject, $body, $headers);
+}
+
+ function email_template($title = '', $body = array()) 
+ {
+        $html = '<div style="background: #f5f5f5; border: 1px solid #ddd; font-family: tahoma; font-size: 14px; color: #555;">
+    <div style="background: #17b976; font-size: 25px; text-transform: capitalize; font-weight: bold; padding: 15px;">
+        <a href="' . home_url() . '" style="color: #fff; text-decoration:none;">' . get_bloginfo('title') . '</a>
+    </div>
+    <div style="background: #fff; border: 1px solid #eaeaea; padding: 15px 15px 5px 15px; margin: 15px;">
+    <h4>' . $title . '</h4>
+';
+        foreach ($body as $b) {
+
+            $html .= '<p style="margin: 0px 0px 10px 0px; font-family: tahoma; font-size: 14px; color: #555; line-height: 21px;">
+        ' . $b . '</p>';
+        }
+        $html .= '<b> ' . __('Time', 'kud') . ' : </b> ' . date('d M Y - h:i A', time());
+        $html .= ' </div>
+    <div style="text-align: center; margin-bottom: 15px;">
+         <a href="' . home_url() . '" target="_blank">' . get_bloginfo('title') . '</a> &nbsp; ' . __('Copyright', 'kud') . ' 2017
+    </div>
+</div>
+';
+        return $html;
+    }
+
 add_action( 'wp_ajax_UploadPhoto','UploadPhoto' );
 add_action( 'wp_ajax_nopriv_UploadPhoto','UploadPhoto' );
 ?>

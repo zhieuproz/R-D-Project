@@ -1,5 +1,10 @@
 <?php
 
+require_once(DUPLICATOR_PLUGIN_PATH . '/ctrls/ctrl.base.php');
+require_once(DUPLICATOR_PLUGIN_PATH . '/classes/utilities/class.u.scancheck.php');
+require_once(DUPLICATOR_PLUGIN_PATH . '/classes/utilities/class.u.json.php');
+require_once(DUPLICATOR_PLUGIN_PATH . '/classes/package/class.pack.php');
+
 /**
  *  DUPLICATOR_PACKAGE_SCAN
  *  Returns a json scan report object which contains data about the system
@@ -17,11 +22,11 @@ function duplicator_package_scan() {
 	error_reporting(E_ERROR);
 	DUP_Util::initSnapshotDirectory();
 	
-	$Package = DUP_Package::getActive();
-	$report = $Package->runScanner();
+	$package = DUP_Package::getActive();
+	$report = $package->runScanner();
 	
-	$Package->saveActiveItem('ScanFile', $Package->ScanFile);
-	$json_response = json_encode($report);
+	$package->saveActiveItem('ScanFile', $package->ScanFile);
+	$json_response = DUP_JSON::safeEncode($report);
 	
 	DUP_Package::tempFileCleanup();
 	error_reporting($errLevel);
@@ -140,5 +145,67 @@ function duplicator_package_delete() {
     die(json_encode($json));
 }
 
-//DO NOT ADD A CARRIAGE RETURN BEYOND THIS POINT (headers issue)!!
-?>
+
+
+/**
+ * Controller for Tools
+ * @package Dupicator\ctrls
+ */
+class DUP_CTRL_Package extends DUP_CTRL_Base
+{
+	/**
+     *  Init this instance of the object
+     */
+	function __construct()
+	{
+		add_action('wp_ajax_DUP_CTRL_Package_addQuickFilters', array($this, 'addQuickFilters'));
+	}
+
+
+	/**
+     * Removed all reserved installer files names
+	 *
+	 * @param string $_POST['dir_paths']		A semi-colon seperated list of dir paths
+	 *
+	 * @return string	Returns all of the active directory filters as a ";" seperated string
+     */
+	public function addQuickFilters($post)
+	{
+		$post = $this->postParamMerge($post);
+		check_ajax_referer($post['action'], 'nonce');
+		$result = new DUP_CTRL_Result($this);
+
+		try {
+			//CONTROLLER LOGIC
+			$package = DUP_Package::getActive();
+
+			//DIRS
+			$dir_filters = $package->Archive->FilterDirs.';' . $post['dir_paths'];
+			$dir_filters = $package->Archive->parseDirectoryFilter($dir_filters);
+			$changed = $package->Archive->saveActiveItem($package, 'FilterDirs', $dir_filters);
+
+			//FILES
+			$file_filters = $package->Archive->FilterFiles.';' . $post['file_paths'];
+			$file_filters = $package->Archive->parseFileFilter($file_filters);
+			$changed = $package->Archive->saveActiveItem($package, 'FilterFiles', $file_filters);
+
+			
+			$changed = $package->Archive->saveActiveItem($package, 'FilterOn', 1);
+
+			//Result
+			$package = DUP_Package::getActive();
+			$payload['dirs-in'] = $post['dir_paths'];
+			$payload['dir-out'] = $package->Archive->FilterDirs;
+			$payload['files-in'] = $post['file_paths'];
+			$payload['files-out'] = $package->Archive->FilterFiles;
+
+			//RETURN RESULT
+			$test = ($changed) ? DUP_CTRL_Status::SUCCESS : DUP_CTRL_Status::FAILED;
+			$result->process($payload, $test);
+
+		} catch (Exception $exc) {
+			$result->processError($exc);
+		}
+	}
+
+}

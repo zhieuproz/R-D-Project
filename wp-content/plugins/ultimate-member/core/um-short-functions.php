@@ -510,12 +510,12 @@
 					}
 
 					if ( $k == 'timestamp' ) {
-						$k = __('date submitted','ultimatemember');
+						$k = __('date submitted','ultimate-member');
 						$v = date("d M Y H:i", $v);
 					}
 
 					if ( $style ) {
-						if ( !$v ) $v = __('(empty)','ultimatemember');
+						if ( !$v ) $v = __('(empty)','ultimate-member');
 						$output .= "<p><label>$k</label><span>$v</span></p>";
 					} else {
 						$output .= "$k: $v" . "\r\n";
@@ -957,6 +957,8 @@
 			$url = remove_query_arg( 'profiletab', $url );
 			$url = add_query_arg('profiletab', 'main', $url );
 		}
+
+		$url = apply_filters('um_edit_profile_cancel_uri', $url );
 
 		return $url;
 	}

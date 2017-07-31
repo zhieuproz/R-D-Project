@@ -16,7 +16,7 @@ a:hover, a:focus{
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
-	color: #666;
+	color: #fff;
 	text-shadow: 0 0 1px rgba(0,0,0,0.01);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;

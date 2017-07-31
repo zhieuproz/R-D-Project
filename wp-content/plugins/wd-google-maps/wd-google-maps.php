@@ -4,7 +4,7 @@
  * Plugin Name: Google Maps WD
  * Plugin URI: https://web-dorado.com/products/wordpress-google-maps-plugin.html
  * Description: Google Maps WD is an intuitive tool for creating Google maps with advanced markers, custom layers and overlays for   your website.
- * Version: 1.0.39
+ * Version: 1.0.43
  * Author: WebDorado
  * Author URI: http://web-dorado.com/
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html

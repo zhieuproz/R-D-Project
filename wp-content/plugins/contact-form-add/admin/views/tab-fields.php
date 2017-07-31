@@ -4,7 +4,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="singleText" data-specialbtn="true">Single Line Text</button>
+			<button data-btntype="singleText" data-specialbtn="true"> <i class="fa fa-text-width"></i><br> Single Line Text</button>
 
 		</div>
 
@@ -14,7 +14,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="singleNumber" data-specialbtn="true">Number</button>
+			<button data-btntype="singleNumber" data-specialbtn="true"> <i class="fa fa-sort-numeric-asc"></i><br> Number</button>
 
 		</div>
 
@@ -24,7 +24,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="textarea" data-specialbtn="true">Textarea</button>
+			<button data-btntype="textarea" data-specialbtn="true"> <i class="fa fa-file-text-o"></i><br> Textarea</button>
 
 		</div>
 
@@ -34,7 +34,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="dropdown" data-specialbtn="true">Dropdown</button>
+			<button data-btntype="dropdown" data-specialbtn="true"> <i class="fa fa-chevron-circle-down"></i><br> Dropdown</button>
 
 		</div>
 
@@ -44,7 +44,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="radioButtons" data-specialbtn="true">Radio Buttons</button>
+			<button data-btntype="radioButtons" data-specialbtn="true"> <i class="fa fa-adjust"></i><br> Radio Buttons</button>
 
 		</div>
 
@@ -56,7 +56,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="checkboxes" data-specialbtn="true">Checkboxes</button>
+			<button data-btntype="checkboxes" data-specialbtn="true"> <i class="fa fa-check-square-o"></i><br> Checkboxes</button>
 
 		</div>
 
@@ -67,7 +67,7 @@
 
 		<div class="fieldWrap">
 
-			<button  data-btntype="sectionBreak" data-specialbtn="true">Section Break</button>
+			<button  data-btntype="sectionBreak" data-specialbtn="true"> <i class="fa fa-ellipsis-h"></i><br> Section Break</button>
 
 		</div>
 
@@ -77,7 +77,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="lineBreak" data-specialbtn="true">Line Break</button>
+			<button data-btntype="lineBreak" data-specialbtn="true"> <i class="fa fa-cut"></i><br> Line Break</button>
 
 		</div>
 
@@ -85,22 +85,12 @@
 	
 
 	<h4 class="headingFieldFeature"><?php smuzform_translate_e( 'Advanced Fields' ) ?></h4>
-
-	<li class="field fileUpload">
-
-		<div class="fieldWrap">
-
-			<button data-btntype="fileUpload" data-specialbtn="true">File Upload</button>
-
-		</div>
-
-	</li>
 	
 	<li class="field name">
 
 		<div class="fieldWrap">
 
-			<button data-btntype="name" data-specialbtn="true">Name</button>
+			<button data-btntype="name" data-specialbtn="true"> <i class="fa fa-user"></i><br> Name</button>
 
 		</div>
 
@@ -110,7 +100,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="email" data-specialbtn="true">Email</button>
+			<button data-btntype="email" data-specialbtn="true"> <i class="fa fa-envelope"></i><br> Email</button>
 
 		</div>
 
@@ -120,7 +110,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="date" data-specialbtn="true">Date</button>
+			<button data-btntype="date" data-specialbtn="true"> <i class="fa fa-calendar"></i><br> Date</button>
 
 		</div>
 
@@ -130,7 +120,7 @@
 
 		<div class="fieldWrap">
 
-			<button  data-btntype="address" data-specialbtn="true">Address</button>
+			<button  data-btntype="address" data-specialbtn="true"> <i class="fa fa-address-card-o"></i><br> Address</button>
 
 		</div>
 
@@ -140,7 +130,7 @@
 
 		<div class="fieldWrap">
 
-			<button data-btntype="phone" data-specialbtn="true">Phone</button>
+			<button data-btntype="phone" data-specialbtn="true"> <i class="fa fa-phone"></i><br> Phone</button>
 
 		</div>
 
@@ -150,59 +140,21 @@
 
 		<div class="fieldWrap">
 
-			<button  data-btntype="Website" data-specialbtn="true">Website</button>
+			<button  data-btntype="Website" data-specialbtn="true"> <i class="fa fa-globe"></i><br> Website</button>
 
 		</div>
 
 	</li>
 
-	<li class="field likert smuzlocked">
-
-		<div class="fieldWrap">
-
-			<button data-btntype="likertScale" data-specialbtn="true">Likert</button>
-
-		</div>
-
-	</li>
-
-	<li class="field pageBreak">
-
-		<div class="fieldWrap">
-
-			<button  data-btntype="pageBreak" data-specialbtn="true">Page Break</button>
-
-		</div>
-
-	</li>
-
-	<li class="field rating likert smuzlocked">
-
-		<div class="fieldWrap">
-
-			<button data-btntype="rating" data-specialbtn="true">Rating</button>
-
-		</div>
-
-	</li>
 	
-	<h4 class="headingFieldFeature"><?php smuzform_translate_e( 'HTML Elements' ) ?></h4>
+	<a href="http://web-settler.com/form-builder/?ref=sidebanner" target="_blank" style="text-decoration: none; color: #fff;"><h4 class="headingFieldFeature" style="background: #333; color: #fff; padding:10px 5px 10px 5px; text-align: center;"><?php smuzform_translate_e( 'Unlock Premium Elements' ) ?></a></h4>
 
-	<li class="field customText">
 
-		<div class="fieldWrap">
-
-			<button  data-btntype="customText" data-specialbtn="true">Text</button>
-
-		</div>
-
-	</li>
-
-	<li class="field customImage">
+	<li class="field likert smuzlocked">
 
 		<div class="fieldWrap">
 
-			<button  data-btntype="customImage" data-specialbtn="true">Image</button>
+			<button data-btntype="fileUpload" data-specialbtn="true"> <i class="fa fa-upload"></i><br> File Upload</button>
 
 		</div>
 
@@ -212,20 +164,81 @@
 
 		<div class="fieldWrap">
 
-			<button>Link</button>
+			<button  data-btntype="customText" data-specialbtn="true"> <i class="fa fa-file-text"></i><br> Description</button>
 
 		</div>
 
 	</li>
 
-	<li class="field customHtml">
+	<li class="field likert smuzlocked">
 
 		<div class="fieldWrap">
 
-			<button data-btntype="customHtml" data-specialbtn="true">Custom HTML</button>
+			<button  data-btntype="customImage" data-specialbtn="true"> <i class="fa fa-image"></i><br> Image</button>
+
+		</div>
+
+	</li>
+
+	<li class="field likert smuzlocked">
+
+		<div class="fieldWrap">
+
+			<button> <i class="fa fa-link"></i><br> Link</button>
+
+		</div>
+
+	</li>
+
+	<li class="field likert smuzlocked">
+
+		<div class="fieldWrap">
+
+			<button data-btntype="customHtml" data-specialbtn="true"> <i class="fa fa-code"></i><br> Custom HTML</button>
+
+		</div>
+
+	</li>
+
+	<li class="field likert smuzlocked">
+
+		<div class="fieldWrap">
+
+			<button data-btntype="rating" data-specialbtn="true"> <i class="fa fa-star-half-empty"></i><br> Rating</button>
+
+		</div>
+
+	</li>
+
+	<li class="field likert smuzlocked">
+
+		<div class="fieldWrap">
+
+			<button data-btntype="likertScale" data-specialbtn="true"> <i class="fa fa-gratipay"></i><br> Likert</button>
+
+		</div>
+
+	</li>
+
+	<li class="field likert smuzlocked">
+
+		<div class="fieldWrap">
+
+			<button  data-btntype="pageBreak" data-specialbtn="true"> <i class="fa fa-ellipsis-h"></i><br> Page Break</button>
 
 		</div>
 
 	</li>
 
 </ol>
+<script src="https://use.fontawesome.com/076f5df986.js"></script>
+<style type="text/css">
+	.fa{
+		font-size: 20px;
+		margin-bottom: 7px;
+		margin-top: 7px;
+	}
+	.nav-tabs>li {
+		background: #f7f7f7;
+	}
+</style>

@@ -368,7 +368,78 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				<h1 class="section-title">WordPress Plugins</h1>
 			</div>
 		</div>
-		
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/pinterest-feed-pro.jpg" class="img-responsive" alt="Pinterest"/>
+					
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="#">Pinterest Feed Pro </a></h2>
+						<p><strong>Features: </strong>
+						<ul>
+						<li>Pinterest Feed Shortcode</li>
+						<li>Pinterest Profile</li>
+						<li>Pinterest Pin Slider</li>
+						<li>Multilingual & Translation Ready</li>
+						<li>Multi Site Supportt</li>
+						<li>Pinterest Pins</li>
+						<li>Easy to use user friendly interface</li>
+						<li>Site Speed Up</li>
+						</ul>
+						</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number"><span>$18</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a target="_blank" class="btn btn-primary btn-lg" href="https://weblizar.com/plugins/pinterest-feed-pro/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/pinterest-feed-pro/">Buy Now</a> 
+				</div>			
+			</div>
+		</div>
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/appointment-scheduler-pro.jpg" class="img-responsive" alt="Appointment"/>
+					
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Appointment Schedulr Pro </a></h2>
+						<p><strong>Features: </strong>
+						<ul>
+						<li>Experience Responsive Scheduling</li>
+						<li>Unlimited Bookings</li>
+						<li>Unlimited Services</li>
+						<li>Unlimited Staff</li>
+						<li>Free Bookings</li>
+						<li>Premium Booking</li>
+						<li>Statistical Administrator Dashboard</li>
+						<li>Notification</li>
+						<li>Admin Notification</li>
+						<li>Staff Notification</li>
+						</ul>
+						</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number"><span>$40</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a target="_blank" class="btn btn-primary btn-lg" href="https://weblizar.com/plugins/appointment-scheduler-pro/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/appointment-scheduler-pro/">Buy Now</a> 
+				</div>			
+			</div>
+		</div>
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">

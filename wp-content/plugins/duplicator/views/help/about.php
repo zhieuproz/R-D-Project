@@ -57,7 +57,7 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
                 </td>
                 <td valign="top" style="padding-top:10px; font-size:14px">
                     <?php
-                    _e("Duplicator helps you streamlines your workflows and quickly clone a WordPress site. The plugin was made to help you speed up the migration process of moving a WordPress site. Please help us to continue in the development effort of this plugin with a 5 star.", 'duplicator');
+                    _e("Duplicator helps you streamline your workflow and quickly clone a WordPress site. The plugin was made to help you speed up the migration process of moving a WordPress site. Please help us continue development by giving this plugin a 5 star.", 'duplicator');
                     ?>
                 </td>
             </tr>
@@ -75,9 +75,9 @@ require_once(DUPLICATOR_PLUGIN_PATH . '/views/inc.header.php');
             <table style="text-align: center;width:100%; font-size:11px; font-style:italic; margin-top:25px">
                 <tr>
                     <td valign="top">
-                        <a href="http://wordpress.org/extend/plugins/duplicator" target="_blank"><img id="dup-img-5stars" src="<?php echo DUPLICATOR_PLUGIN_URL ?>assets/img/5star.png" /></a>
+                        <a href="https://wordpress.org/support/plugin/duplicator/reviews/?filter=5" target="vote-wp"><img id="dup-img-5stars" src="<?php echo DUPLICATOR_PLUGIN_URL ?>assets/img/5star.png" /></a>
                         <div  style=" font-size: 16px; font-weight: bold">
-							<a href="http://wordpress.org/extend/plugins/duplicator" target="_blank"><?php _e('Leave 5 Stars', 'duplicator') ?></a>
+							<a href="https://wordpress.org/support/plugin/duplicator/reviews/?filter=5" target="vote-wp"><?php _e('Leave 5 Stars', 'duplicator') ?></a>
 						</div>
                     </td>
                 </tr>

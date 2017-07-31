@@ -144,7 +144,7 @@ jQuery(document).ready(function() {
 		parent.find('.um-single-image-preview img').attr('src','');
 		parent.find('.um-single-image-preview').hide();
 		parent.find('.um-btn-auto-width').html('Upload');
-		parent.find('input[type=hidden]').val('');
+		parent.find('input[type=hidden]').val('empty_file');
 
 		jQuery.ajax({
 			url: um_scripts.ajaxurl,
@@ -164,7 +164,7 @@ jQuery(document).ready(function() {
 		var src = jQuery(this).parents('.um-field').find('.um-single-fileinfo a').attr('href');
 		parent.find('.um-single-file-preview').hide();
 		parent.find('.um-btn-auto-width').html('Upload');
-		parent.find('input[type=hidden]').val('');
+		parent.find('input[type=hidden]').val('empty_file');
 
 		jQuery.ajax({
 			url: um_scripts.ajaxurl,
@@ -292,6 +292,14 @@ jQuery(document).ready(function() {
 	jQuery(document).on('click', '#um-search-button', function() {
 
 			jQuery(this).parents('form').submit();
+	});
+
+	jQuery('.um-form input[class=um-button][type=submit]').removeAttr('disabled');
+
+	jQuery(document).one('click', '.um:not(.um-account) .um-form input[class=um-button][type=submit]', function() {
+			jQuery(this).attr('disabled','disabled');
+			jQuery(this).parents('form').submit();
+			
 	});
 
 	

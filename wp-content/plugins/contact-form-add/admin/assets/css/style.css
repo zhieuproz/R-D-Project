@@ -28,11 +28,14 @@ remember to change color #f6f6f6
 	padding: 0;
 }
 
+#smuzform-cont .navbar-header li:hover{
+	background: #3a434b;
+    border-radius: 5px;
+}
 .navBarActionsLi a{
 	cursor: pointer;
 	font-size: 18px;
-	color: #000 !important;
-	font-weight: 900;
+	color: #fff !important;
 }
 
 .navBarActionsLi a:hover {
@@ -57,10 +60,10 @@ remember to change color #f6f6f6
     top: -3px;
     text-decoration: none;
     border: none;
-    border: 1px solid #ccc;
+    border: 1px dashed #a7bad3;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: rgb(236, 245, 252);
     text-shadow: none;
     font-weight: 600;
     font-size: 13px;
@@ -75,7 +78,7 @@ remember to change color #f6f6f6
     transition-duration: .05s;
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
-    background-color: #0073ab;
+    background-color: #95cdf8;
 }
 
 .mainnavbar { 

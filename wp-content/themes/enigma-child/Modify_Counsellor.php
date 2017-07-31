@@ -20,7 +20,7 @@
                 </h1>
 					
                 <?php
-					echo '<a style="font-size:18px;" href="'; ?> <?php echo site_url(); ?> <?php echo '"> Home </a>'. ' / '. $current_user->display_name. "Control Counsellor";			
+					echo '<a style="font-size:18px;" href="'; ?> <?php echo site_url(); ?> <?php echo '"> Home </a>'. ' / '. " Control Counsellor";			
 				 ?>
                 
 			</div>
@@ -38,8 +38,9 @@
 		<div id="result"></div>
 		
 		<div class="alert alert-info" role="alert" hidden="true">
-		  <strong>Added successfully!</strong>
+		  <strong></strong>
 		</div>
+		
 		
 		<div class="alert alert-success" role="alert" hidden="true">
 		  <strong>Edited successfully !</strong> 
@@ -49,6 +50,7 @@
 		  <strong>Deleted successfully !</strong> 
 		</div>
 			<?php
+			
 					Add_Counsellor();
 					$i = 0;
 					while($i<3)

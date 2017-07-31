@@ -1300,7 +1300,7 @@ $(document).ready(function() {
 
 		});
 
-		alert( 'The field is in development. Will be available in next version.' );
+		alert( 'The field is olny available in pro version, Please purchase Premium Version to unlock it.' );
 
 		//smuzform.App.Collections.FieldsCol.add( LikertFieldModel );
 

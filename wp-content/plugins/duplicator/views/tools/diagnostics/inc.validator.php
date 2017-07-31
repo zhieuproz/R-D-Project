@@ -1,10 +1,10 @@
 <?php
 	$scan_run = (isset($_POST['action']) && $_POST['action'] == 'duplicator_recursion') ? true :false;	
-	$ajax_nonce	= wp_create_nonce('DUP_CTRL_Tools_RunScanValidator');
+	$ajax_nonce	= wp_create_nonce('DUP_CTRL_Tools_runScanValidator');
 ?>
 
 <style>
-	div#hb-result {padding: 10px 5px 0 5px; line-height: 22px}
+	div#hb-result {padding: 10px 5px 0 5px; line-height:20px; font-size: 12px}
 </style>
 
 <!-- ==========================================
@@ -14,7 +14,7 @@ THICK-BOX DIALOGS: -->
 	$confirm1->title			= __('Run Validator', 'duplicator');
 	$confirm1->message			= __('This will run the scan validation check.  This may take several minutes.  Do you want to Continue?', 'duplicator');
 	$confirm1->progressOn		= false;
-	$confirm1->jscallback		= 'Duplicator.Tools.RunScanValidator()';
+	$confirm1->jscallback		= 'Duplicator.Tools.runScanValidator()';
 	$confirm1->initConfirm();
 ?>
 
@@ -29,9 +29,10 @@ SCAN VALIDATOR -->
 	<div class="dup-box-panel" style="display: <?php echo $scan_run ? 'block' : 'none';  ?>">	
 		<?php 
 			_e("This utility will help to find unreadable files and sys-links in your environment  that can lead to issues during the scan process.  ", "duplicator"); 
-			_e("The utility  will also show how many files and directories you have in your system.  This process may take several minutes to run.  ", "duplicator"); 
+			_e("The utility will also shows how many files and directories you have in your system.  This process may take several minutes to run.  ", "duplicator");
 			_e("If there is a recursive loop on your system then the process has a built in check to stop after a large set of files and directories have been scanned.  ", "duplicator"); 
-			_e("A message will show indicated that that a scan depth has been reached. ", "duplicator"); 
+			_e("A message will show indicated that that a scan depth has been reached. If you have issues with the package scanner (step 2) during the build process then try to add "
+			. "The paths below to your file filters to allow the scanner to finish.", "duplicator");
 		?> 
 		<br/><br/>
 
@@ -46,31 +47,54 @@ SCAN VALIDATOR -->
 			<table>
 				<tr>
 					<td><b>Files:</b></td>
-					<td>{{Payload.fileCount}} </td>
-				</tr>
-				<tr>
+					<td>{{payload.fileCount}} </td>
+					<td> &nbsp; </td>
 					<td><b>Dirs:</b></td>
-					<td>{{Payload.dirCount}} </td>
+					<td>{{payload.dirCount}} </td>
 				</tr>
 			</table>
+			<br/>
 
-			<b>Unreadable Files:</b> <br/>
-			{{#if Payload.unreadable}}
-				{{#each Payload.unreadable}}
+			<b>Unreadable Dirs/Files:</b> <br/>
+			{{#if payload.unreadable}}
+				{{#each payload.unreadable}}
 					&nbsp; &nbsp; {{@index}} : {{this}}<br/>
 				{{/each}}
 			{{else}}
 				<i>No Unreadable items found</i> <br/>
 			{{/if}}
+			<br/>
 			
 			<b>Symbolic Links:</b> <br/>
-			{{#if Payload.symLinks}}
-				{{#each Payload.symLinks}}
+			{{#if payload.symLinks}}
+				{{#each payload.symLinks}}
 					&nbsp; &nbsp; {{@index}} : {{this}}<br/>
 				{{/each}}
 			{{else}}
 				<i>No Sym-links found</i> <br/>
+				<small>	<?php _e("Note: Symlinks are not discoverable on Windows OS with PHP", "duplicator"); ?></small> <br/>
 			{{/if}}
+			<br/>
+
+			<b>Directory Name Checks:</b> <br/>
+			{{#if payload.nameTestDirs}}
+				{{#each payload.nameTestDirs}}
+					&nbsp; &nbsp; {{@index}} : {{this}}<br/>
+				{{/each}}
+			{{else}}
+				<i>No name check warnings located for directory paths</i> <br/>
+			{{/if}}
+			<br/>
+
+			<b>File Name Checks:</b> <br/>
+			{{#if payload.nameTestFiles}}
+				{{#each payload.nameTestFiles}}
+					&nbsp; &nbsp; {{@index}} : {{this}}<br/>
+				{{/each}}
+			{{else}}
+				<i>No name check warnings located for directory paths</i> <br/>
+			{{/if}}
+
 			<br/>
 		</script>
 		<div id="hb-result"></div>	
@@ -88,13 +112,13 @@ jQuery(document).ready(function($)
 	}
 	
 	
-	//Run request to: admin-ajax.php?action=DUP_CTRL_Tools_RunScanValidator
-	Duplicator.Tools.RunScanValidator = function() 
+	//Run request to: admin-ajax.php?action=DUP_CTRL_Tools_runScanValidator
+	Duplicator.Tools.runScanValidator = function()
 	{
 		tb_remove();
-		var data = {action : 'DUP_CTRL_Tools_RunScanValidator', nonce: '<?php echo $ajax_nonce; ?>', 'scan-recursive': true};
+		var data = {action : 'DUP_CTRL_Tools_runScanValidator', nonce: '<?php echo $ajax_nonce; ?>', 'scan-recursive': true};
 		
-		$('#hb-result').html('<?php _e("Scanning Enviroment... This may take a few minutes.", "duplicator"); ?>');
+		$('#hb-result').html('<?php _e("Scanning Environment... This may take a few minutes.", "duplicator"); ?>');
 		$('#scan-run-btn').html('<i class="fa fa-circle-o-notch fa-spin fa-fw"></i> Running Please Wait...');
 		
 		$.ajax({

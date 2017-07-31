@@ -27,8 +27,6 @@ if( month<10)
 }
 
 
-
-
 	$(document).ready(function() 
 	{
 		$('#AddingBox').click(function() 
@@ -89,6 +87,11 @@ function CheckPost()
 		return false;
 	}
 	
+	else if(!$("input[name='Feeling']:checked").val())
+	{
+		alert("Please stick your feeling!!!");
+		return false;
+	}
 	else
 	{
 
@@ -102,7 +105,7 @@ function CheckPost()
 					'feeling' : F,
 					'attitude' : A
 					},
-			url : AJAX.url,
+			url : ajax.url,
 			success : function (resp){
 				$('#cd-timeline').html(resp);// update content
 				
@@ -129,24 +132,26 @@ $(document).ready(function() { // Editing a post
     $(document).on('click','.id-edit', function(){
 		$("#Adding_Model").modal();
         var id = $(this).attr('idEdit');
-		
 		$('#submit').hide(); // show update button and hide post button 
 		$('#Update').show();
 		$('#TitleOfPost').html('Editing post');
 		
-		//$('#AddingPost').fadeIn(300); // show adding box
+		
 	 	$('#title').focus(); 
 		
 		var OldTitle = $(this).attr('titleEdit'); //get current data
 		var OldDate = $(this).attr('dateEdit');
 		var OldContent = $(this).attr('contentEdit');
 		var OldFeeling = $(this).attr('feelingEdit');
+		
 		var A = $('.attitude').html();
+		$('#timeline-id-row').val(id);
+		
 		
 		$("#title").val(OldTitle); //set current data to adding box 
 		$("#date").val(OldDate);
 		$("#content").val(OldContent);
-		$("input[name=Feeling][value=" +OldFeeling + "]").attr('checked', true); //set data with radio type
+		$("[name=Feeling]").val([OldFeeling]); //set data with radio type
 		
 		$(document).on('click','#Update', function()
 		{
@@ -154,19 +159,20 @@ $(document).ready(function() { // Editing a post
 			var NewDate = $('#date').val();
 			var NewContent = $('#content').val();
 			var NewFeeling = $('input[name=Feeling]:checked', '#timeline-form').val();
+			var newid = $('#timeline-id-row').val();
 			
 			$.ajax({
 				type : 'POST',
 				dataType:'text',
 				data : {'action' : 'processing',
-						'idEdit' : id,
+						'idEdit' : newid,
 						'TitleUpdate' : NewTitle,
 						'DateUpdate' : NewDate,
 						'ContentUpdate' : NewContent,
 						'FeelingUpdate' : NewFeeling,
 						'attitude' : A
 						},
-				url : AJAX.url,
+				url : ajax.url,
 				success : function (resp){
 					$('#cd-timeline').html(resp);// update content
 					
@@ -201,7 +207,7 @@ $(document).ready(function() { // Deleting a post
 					'deleting' : id,
 					'attitude' : A
 					},
-			url : AJAX.url,
+			url : ajax.url,
 			success : function (resp){
 				$('#cd-timeline').html(resp);
 			}

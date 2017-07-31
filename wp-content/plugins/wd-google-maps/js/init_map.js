@@ -64,6 +64,14 @@ function gmwdInitMainMap(el, excludeOverlays, key){
         gmwdSetMapPolylines(key);
     }
 
+    jQuery(document).on("click",".gm-fullscreen-control",function(){
+        setTimeout(function(){ 
+            gmwdmapData["main_map" + key].setCenter({lat: Number(gmwdmapData["centerLat" + key]), lng: Number(gmwdmapData["centerLng" + key])});
+            gmwdmapData["main_map" + key].setZoom(gmwdmapData["zoom" + key]);
+        }, 300);
+
+    });  
+
 }
 
 function gmwdSetMapMarkers(_key){

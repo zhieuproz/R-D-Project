@@ -44,11 +44,11 @@ Duplicator.ReloadWindow = function(data)
 };
 
 //Basic Util Methods here:
-Duplicator.OpenLogWindow = function(log) 
+Duplicator.OpenLogWindow = function(target)
 {
-	var logFile = log || null;
-	if (logFile == null) {
-		window.open('?page=duplicator-tools', 'Log Window');
+	var target = "log-win" || null;
+	if (target != null) {
+		window.open('?page=duplicator-tools', 'log-win');
 	} else {
 		window.open('<?php echo DUPLICATOR_SSDIR_URL; ?>' + '/' + log)
 	}
@@ -106,6 +106,22 @@ Duplicator.UI.ToggleMetaBox = function()
 	
 }
 
+Duplicator.UI.readonly = function(item)
+{
+	jQuery(item).attr('readonly', 'true').css({color:'#999'});
+}
+
+Duplicator.UI.disable = function(item)
+{
+	jQuery(item).attr('disabled', 'true').css({color:'#999'});
+}
+
+Duplicator.UI.enable = function(item)
+{
+	jQuery(item).removeAttr('disabled').css({color:'#000'});
+	jQuery(item).removeAttr('readonly').css({color:'#000'});
+}
+
 //Init
 jQuery(document).ready(function($) 
 {
@@ -150,23 +166,73 @@ jQuery(document).ready(function($)
 			? $arrow.html('<i class="fa fa-caret-up"></i>')
 			: $arrow.html('<i class="fa fa-caret-down"></i>');
 	});
-	
-	//Look for tooltip data
-	$('i[data-tooltip!=""]').qtip({ 
-		content: {
-			attr: 'data-tooltip',
-			title: {
-				text: function() { return  $(this).attr('data-tooltip-title'); }
+
+
+	Duplicator.UI.loadQtip = function()
+	{
+		//Look for tooltip data
+		$('i[data-tooltip!=""]').qtip({
+			content: {
+				attr: 'data-tooltip',
+				title: {
+					text: function() { return  $(this).attr('data-tooltip-title'); }
+				}
+			},
+			style: {
+				classes: 'qtip-light qtip-rounded qtip-shadow',
+				width: 500
+			},
+			 position: {
+				my: 'top left',
+				at: 'bottom center'
 			}
-		},
-		style: {
-			classes: 'qtip-light qtip-rounded qtip-shadow',
-			width: 500
-		},
-		 position: {
-			my: 'top left', 
-			at: 'bottom center'
+		});
+	}
+
+	Duplicator.UI.loadQtip();
+
+
+	//HANDLEBARS HELPERS
+	if  (typeof(Handlebars) != "undefined"){
+
+		function _handleBarscheckCondition(v1, operator, v2) {
+			switch(operator) {
+				case '==':
+					return (v1 == v2);
+				case '===':
+					return (v1 === v2);
+				case '!==':
+					return (v1 !== v2);
+				case '<':
+					return (v1 < v2);
+				case '<=':
+					return (v1 <= v2);
+				case '>':
+					return (v1 > v2);
+				case '>=':
+					return (v1 >= v2);
+				case '&&':
+					return (v1 && v2);
+				case '||':
+					return (v1 || v2);
+				case 'obj||':
+					v1 = typeof(v1) == 'object' ? v1.length : v1;
+					v2 = typeof(v2) == 'object' ? v2.length : v2;
+					return (v1 !=0 || v2 != 0);
+				default:
+					return false;
+			}
 		}
-	});
+
+		Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+			return _handleBarscheckCondition(v1, operator, v2)
+						? options.fn(this)
+						: options.inverse(this);
+		});
+
+		Handlebars.registerHelper('if_eq',		function(a, b, opts) { return (a == b) ? opts.fn(this) : opts.inverse(this);});
+		Handlebars.registerHelper('if_neq',		function(a, b, opts) { return (a != b) ? opts.fn(this) : opts.inverse(this);});
+	}
+
 });	
 </script>

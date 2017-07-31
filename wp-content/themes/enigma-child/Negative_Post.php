@@ -38,59 +38,63 @@
      		<div id="titlename"> <h1 style="font-size:25px; color:#900;"> Negative Timeline </h1></div>
         
     	<?php 
-			$Name = $current_user->display_name; //getting current user to variable name to use !!
-			include("Database/ConnectDatabase.php");
-			$GLOBALS['Check_Attitude'] = 0;
-			$sql = mysqli_query($conn,"select * from timeline where User_Identify like '$Name' and Attitude like 'Negative' ");
-			if(mysqli_num_rows($sql) != 0) 
-			{
-									echo "<br />";
-									
-									// Adding a post to diary ( From functions.php);
-									
-									Add_Post();
-									// End a post
-									$i = 0;
-									while($i<5)
-									{
-										echo '<br/>';
-										$i++;
-									}
-                            		
-									//Filter_Timeline();
-									// Showing  timeline/diary
-									echo '<section id="cd-timeline" class="cd-container">';
-									
-									Show_Timeline(); // this function is called from function.php of root folder
-									
-									echo '</section> <!-- cd-timeline -->';
-									// end timeline/diary
-									
-			}
-					
+			if(is_user_logged_in() == false) 
+				echo'<div style="color:red; font-size:25px;"> Please Login to use this function.!!! </div>';
 			else
 			{
-				// In case users have no post!!!
-				echo "<br/>";
-				echo "<Span id='first-time' style='color:red;'>You have no timeline's post , please input at least 1 post!! </span> <br /> <br />";
-				
-				Add_Post(); //function's role is to open adding box (from function.php)
-				$i = 0;
-				while($i<5)
+				$Name = $current_user->display_name; //getting current user to variable name to use !!
+				include("Database/ConnectDatabase.php");
+				$GLOBALS['Check_Attitude'] = 0;
+				$sql = mysqli_query($conn,"select * from timeline where User_Identify like '$Name' and Attitude like 'Negative' ");
+				if(mysqli_num_rows($sql) != 0) 
 				{
-					echo '<br/>';
-					$i++;
+										echo "<br />";
+
+										// Adding a post to diary ( From functions.php);
+
+										Add_Post();
+										// End a post
+										$i = 0;
+										while($i<5)
+										{
+											echo '<br/>';
+											$i++;
+										}
+
+										//Filter_Timeline();
+										// Showing  timeline/diary
+										echo '<section id="cd-timeline" class="cd-container">';
+
+										Show_Timeline(); // this function is called from function.php of root folder
+
+										echo '</section> <!-- cd-timeline -->';
+										// end timeline/diary
+
 				}
-				
-				echo '<section id="cd-timeline" class="cd-container" hidden="true">';
-									
-				Show_Timeline(); // this function is called from function.php of root folder
-									
-				echo '</section> <!-- cd-timeline -->';
+
+				else
+				{
+					// In case users have no post!!!
+					echo "<br/>";
+					echo "<Span id='first-time' style='color:red;'>You have no timeline's post , please input at least 1 post!! </span> <br /> <br />";
+
+					Add_Post(); //function's role is to open adding box (from function.php)
+					$i = 0;
+					while($i<5)
+					{
+						echo '<br/>';
+						$i++;
+					}
+
+					echo '<section id="cd-timeline" class="cd-container" hidden="true">';
+
+					Show_Timeline(); // this function is called from function.php of root folder
+
+					echo '</section> <!-- cd-timeline -->';
+				}
+
+				mysqli_close($conn);
 			}
-				
-			mysqli_close($conn);
-			
 		?>
 		</div>
 	</div>

@@ -84,10 +84,7 @@ function api_key_notice(){
                 <div class="error">
                     <p style="font-size:18px;"><strong>'.__("Important. API key is required for Google Maps to work.","gmwd").'</strong></p>
                     <p style="font-size:18px;"><strong>'.__("To avoid limitation errors, fill in your own App key.","gmwd").'</strong></p>					
-                    <p><a href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,static_maps_backend,geocoding_backend,roads,street_view_image_backend,geolocation,places_backend&keyType=CLIENT_SIDE&reusekey=true" target="_blank" class="wd-btn wd-btn-primary" style="text-decoration:none;">'.__("GET API KEY FOR FREE","gmwd").'</a></p>
-                    <p>'.__("For getting API key read more in","gmwd").'
-                        <a href="https://web-dorado.com/wordpress-google-maps/installation-wizard-options-menu/configuring-api-key.html" target="_blank" style="color: #00A0D2;">'. __("User Manual","gmwd").'</a>.
-                    </p>
+                   <p><a href=\'https://console.developers.google.com/henhouse/?pb=["hh-1","maps_backend",null,[],"https://developers.google.com",null,["maps_backend","geocoding_backend","directions_backend","distance_matrix_backend","elevation_backend","places_backend","static_maps_backend","roads","street_view_image_backend","geolocation"],null]&TB_iframe=true&width=600&height=400\' class="wd-btn wd-btn-primary thickbox" style="text-decoration:none;" name="'.__( "Generate API Key - ( MUST be logged in to your Google account )", "gmwd" ).'">'.__("Generate Key","gmwd").'</a> or <a target="_blank" href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,static_maps_backend,roads,street_view_image_backend,geolocation,places_backend&keyType=CLIENT_SIDE&reusekey=true">click here</a> to Get a Google Maps API KEY</p>
                     <p>After creating the API key, please paste it here.</p>
                     <form method="post">
                         '.wp_nonce_field('nonce_gmwd', 'nonce_gmwd').'

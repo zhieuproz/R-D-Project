@@ -1,10 +1,10 @@
-=== Google Maps WD – Google Maps builder Plugin ===
+=== Google Maps WD - Google Maps builder Plugin ===
 Contributors: webdorado, wdsupport
 Donate link: https://web-dorado.com/products/wordpress-google-maps-plugin.html
 Tags: google map, google maps, map, map markers, maps, directions, google map plugin, google maps plugin, map plugin, map widget, wp google map, wp google maps, google map widget, google map shortcode, wp map, google maps directions, google maps builder, google places, google places api, google maps api, google places reviews, contact page map, custom google map, loaction by address, location, map direction, map styles, polygons, simple google map, gmap, google map embed, best google maps, custom google maps
 Requires at least: 3.4
-Tested up to: 4.7
-Stable tag: 1.0.39  
+Tested up to: 4.8
+Stable tag: 1.0.43  
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -116,6 +116,18 @@ After downloading the ZIP file of the Google Maps WD plugin,
 10. Google Maps WD - Google Maps Polygons and Polylines   
 
 == Changelog ==
+
+= 1.0.43 =
+* Added: Generate Google Maps API key button       
+
+= 1.0.42 =
+* Fixed: JS error on shortcode editor pop-up   
+
+= 1.0.41 =
+* Fixed: Center Map in fullscreen mode     
+
+= 1.0.40 =
+* Added: ordering for marker listings     
 
 = 1.0.39 =
 * Changed: Dashboard guide texts    

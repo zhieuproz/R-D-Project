@@ -12,9 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta charset="<?php bloginfo('charset'); ?>" />	
 	<?php $wl_theme_options = weblizar_get_options(); ?>
-	<?php if($wl_theme_options['upload_image_favicon']!=''){ ?>
-	<link rel="shortcut icon" href="<?php  echo esc_url($wl_theme_options['upload_image_favicon']); ?>" /> 
-	<?php } ?>
+	
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<?php wp_head(); ?>
 </head>
@@ -29,11 +27,7 @@
 				<div class="col-md-6 col-sm-12 wl_rtl" >					
 					<div claSS="logo logocenter">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if($wl_theme_options['upload_image_logo']){ ?>
-						<img class="img-responsive" src="<?php echo $wl_theme_options['upload_image_logo']; ?>" style="height:<?php if($wl_theme_options['height']!='') { echo $wl_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($wl_theme_options['width']!='') { echo $wl_theme_options['width']; }  else { "200"; } ?>px;" />
-						<?php } else {
-							echo get_bloginfo('name');
-						} ?>
+					 <?php if (has_custom_logo()) { the_custom_logo(); } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>
@@ -42,11 +36,7 @@
 				<div class="col-md-6 col-sm-12 wl_rtl" >					
 					<div claSS="logo">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if($wl_theme_options['upload_image_logo']){ ?>
-						<img class="img-responsive" src="<?php echo $wl_theme_options['upload_image_logo']; ?>" style="height:<?php if($wl_theme_options['height']!='') { echo $wl_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($wl_theme_options['width']!='') { echo $wl_theme_options['width']; }  else { "200"; } ?>px;" />
-						<?php } else {
-							echo get_bloginfo('name');
-						} ?>
+					<?php if (has_custom_logo()) { the_custom_logo(); } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>

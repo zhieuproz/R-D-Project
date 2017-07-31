@@ -2,9 +2,46 @@
 //VIEW: STEP 1- INPUT
 
 //ARCHIVE FILE
-$arcCheck	= (file_exists($GLOBALS['ARCHIVE_PATH']))	? 'Pass' : 'Fail';
+$arcStatus	= (file_exists($GLOBALS['ARCHIVE_PATH']))	? 'Pass' : 'Fail';
+$arcFormat  = ($arcStatus == 'Pass') ? 'Pass' : 'StatusFailed';
 $arcSize    = @filesize($GLOBALS['ARCHIVE_PATH']);
 $arcSize    = is_numeric($arcSize) ? $arcSize : 0;
+$zip_archive_enabled = class_exists('ZipArchive') ? 'Enabled' : 'Not Enabled';
+
+//ARCHIVE FORMAT
+if ($arcStatus) {
+	if (class_exists('ZipArchive')){
+		$zip = new ZipArchive();
+		if($zip->open($GLOBALS['ARCHIVE_PATH']) === TRUE ) {
+
+			$arcFilePath = basename($GLOBALS['ARCHIVE_PATH']);
+			$arcFilePath = substr($arcFilePath, 0, strrpos($arcFilePath, "."));
+			$badFiles  = array('__MACOSX', $arcFilePath);
+			$goodFiles = array('database.sql', 'installer-backup.php');
+			$goodFilesFound = true;
+			$badFilesFound  = false;
+
+			foreach ($badFiles as $val) {
+				if (is_numeric($zip->locateName("{$val}/"))) {
+					$badFilesFound = true;
+					break;
+				}
+			}
+
+			foreach ($goodFiles as $val) {
+				if ($zip->locateName($val) !== true) {
+					$goodFilesFound = false;
+				}
+			}
+
+			$arcFormat = ($goodFilesFound == false && $badFilesFound == true) ? 'Fail' : 'Pass';
+		}
+	} else {
+		$arcFormat = 'NoZipArchive';
+	}
+}
+
+$all_arc = ($arcStatus == 'Pass' && $arcFormat != 'Fail') ? 'Pass' : 'Fail';
 
 //REQUIRMENTS
 $req      	= array();
@@ -31,11 +68,13 @@ $max_time_warn  = (is_numeric($max_time_ini) && $max_time_ini < 31  && $max_time
 
 
 $notice		    = array();
-$notice['01']   = ! file_exists($wpconf_path)	? 'Good' : 'Warn';
-$notice['02']   = $scancount <= 40 ? 'Good' : 'Warn';
+if (!$GLOBALS['FW_ARCHIVE_ONLYDB']) {
+	$notice['01']   = ! file_exists($wpconf_path)	? 'Good' : 'Warn';
+	$notice['02']   = $scancount <= 35 ? 'Good' : 'Warn';
+}
 $notice['03']	= $fulldays <= 180 ? 'Good' : 'Warn';
 $notice['04']	= 'Good'; //Place-holder for future check
-$notice['05']	= 'Good'; //Place-holder for future check $GLOBALS['FW_VERSION_OS'] == PHP_OS ? 'Good' : 'Warn';
+$notice['05']	= 'Good'; //Place-holder for future check 
 $notice['06']	= empty($openbase)	 ? 'Good' : 'Warn';
 $notice['07']	= ! $max_time_warn	 ? 'Good' : 'Warn';
 $all_notice  	= in_array('Warn', $notice) ? 'Warn' : 'Good';
@@ -64,18 +103,53 @@ ARCHIVE
 ==================================== -->
 <div class="hdr-sub1" id="s1-area-archive-file-link" data-type="toggle" data-target="#s1-area-archive-file">
     <a href="javascript:void(0)"><i class="dupx-plus-square"></i> Archive</a>
-	<div class="<?php echo ($arcCheck == 'Pass') ? 'status-badge-pass' : 'status-badge-fail'; ?>" style="float:right">
-		<?php echo ($arcCheck == 'Pass') ? 'Pass' : 'Fail'; ?>
+	<div class="<?php echo ($all_arc == 'Pass') ? 'status-badge-pass' : 'status-badge-fail'; ?>" style="float:right">
+		<?php echo ($all_arc == 'Pass') ? 'Pass' : 'Fail'; ?>
 	</div>
 </div>
 <div id="s1-area-archive-file" style="display:none">
 
     <table class="s1-archive-local">
 		<tr>
+			<td colspan="2"><div class="hdr-sub3">Site Details</div></td>
+		</tr>
+		 <tr>
+            <td>Site:</td>
+            <td><?php echo $GLOBALS['FW_BLOGNAME'];?> </td>
+        </tr>
+        <tr>
+            <td>Notes:</td>
+            <td><?php echo strlen($GLOBALS['FW_PACKAGE_NOTES']) ? "{$GLOBALS['FW_PACKAGE_NOTES']}" : " - no notes - ";?></td>
+        </tr>
+		<?php if ($GLOBALS['FW_ARCHIVE_ONLYDB']) :?>
+		<tr>
+			<td>Mode:</td>
+			<td>Archive only database was enabled during package package creation.</td>
+		</tr>
+		<?php endif; ?>
+	</table>
+
+	<table class="s1-archive-local">
+		<tr>
+			<td colspan="2"><div class="hdr-sub3">File Details</div></td>
+		</tr>
+        <tr>
+            <td>Size:</td>
+            <td><?php echo DUPX_U::readableByteSize($arcSize); ?> </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><?php echo "{$GLOBALS['FW_PACKAGE_NAME']}";?> </td>
+        </tr>
+        <tr>
+            <td>Path:</td>
+            <td><?php echo "{$GLOBALS['CURRENT_ROOT_PATH']}";?> </td>
+        </tr>
+		<tr>
 			<td>Status:</td>
 			<td>
-				<?php if ($arcCheck != 'Fail') : ?>
-					<span class="dupx-pass">Archive file successfully detected.</span>
+				<?php if ($arcStatus != 'Fail') : ?>
+					<span class="dupx-pass">File Found</span>
 				<?php else : ?>
 					<div class="s1-archive-failed-msg">
 						<b class="dupx-fail">Archive File Not Found!</b><br/>
@@ -104,24 +178,38 @@ ARCHIVE
 				<?php endif; ?>
 			</td>
 		</tr>
-        <tr>
-            <td>Size:</td>
-            <td><?php echo DUPX_U::readableByteSize($arcSize); ;?> </td>
-        </tr>
-        <tr>
-            <td>Name:</td>
-            <td><?php echo "{$GLOBALS['FW_PACKAGE_NAME']}";?> </td>
-        </tr>
-        <tr>
-            <td>Path:</td>
-            <td><?php echo "{$GLOBALS['CURRENT_ROOT_PATH']}";?> </td>
-        </tr>
-        <tr>
-            <td>Notes:</td>
-            <td><?php echo strlen($GLOBALS['FW_PACKAGE_NOTES']) ? "{$GLOBALS['FW_PACKAGE_NOTES']}" : " - no notes - ";?></td>
-        </tr>
-    </table>
+		<tr>
+			<td>Format:</td>
+			<td>
+				<?php if ($arcFormat == 'Pass') : ?>
+					<span class="dupx-pass">Good structure</span>
+				<?php elseif ($arcFormat == 'StatusFailed') : ?>
+					<span class="dupx-fail">Unable to validate format</span><br/>
+				<?php elseif ($arcFormat == 'NoZipArchive') : ?>
+					<div class="s1-archive-failed-msg">
+						The PHP extraction library <a href="" target="_help">ZipArchive</a> was not found on this server.  There are a few options:
+						<ol>
+							<li>Contact your host to enable the this PHP library. <a href="" target="_help">[more info]</a></li>
+							<li>Enable 'Manual package extraction' in the options menu and <a href="" target="_help">Manually extract the archive</a></li>
+						</ol>
+					</div>
+				<?php else : ?>
+					<div class="s1-archive-failed-msg">
+						<b class="dupx-fail">Invalid Archive Format Detected!</b><br/>
+						The archive files contents must be laid out in a specific format.  If the format has been changed the install process will error out.
+						<br/><br/>
 
+						This scenario is rare but can happen on some systems during the download and upload process of the zip without a user being aware of
+						the issue. Please check the contents of the zip archive and be sure its contents match the layout of your site.
+						<br/><br/>
+
+						Files such as database.sql and wp-config.php should be at the root of the archive.  For more details see the FAQ article
+						<a href="https://snapcreek.com/duplicator/docs/faqs-tech/#faq-installer-020-q" target="_help">The archive format is changing on my Mac what might be the problem?</a>
+					</div>
+				<?php endif; ?>
+			</td>
+		</tr>
+    </table>
 
 </div>
 <br/><br/>
@@ -213,25 +301,42 @@ VALIDATION
 			</table>
 		</div>
 
-		<!-- NOTICE 1 -->
-		<div class="status <?php echo ($notice['01'] == 'Good') ? 'pass' : 'fail' ?>"><?php echo $notice['01']; ?></div>
-		<div class="title" data-type="toggle" data-target="#s1-notice01">+ Configuration File</div>
-		<div class="info" id="s1-notice01">
-			Duplicator works best by placing the installer and archive files into an empty directory.  Typically, if a wp-config.php file is found in the extraction
-			directory it may indicate that your trying to install over an existing WordPress site which can lead to un-intended results.  If this is not the case, then
-			just ignore this notice, but be aware that you will have to remove the wp-config.php file later on in the deployment process.
-		</div>
+		<?php if (!$GLOBALS['FW_ARCHIVE_ONLYDB']) :?>
 
-		<!-- NOTICE 2 -->
-		<div class="status <?php echo ($notice['02'] == 'Good') ? 'pass' : 'fail' ?>"><?php echo $notice['02']; ?></div>
-		<div class="title" data-type="toggle" data-target="#s1-notice02">+ Directory Setup</div>
-		<div class="info" id="s1-notice02">
-			<b>Deployment Path:</b> <i><?php echo "{$GLOBALS['CURRENT_ROOT_PATH']}"; ?></i>
-			<br/><br/>
-			There are currently <?php echo "<b>[{$scancount}]</b>";?>  items in the deployment path. These items will be overwritten if they also exist
-			inside the archive file.  The notice is to prevent overwriting an existing site or trying to install on-top of one which
-			can have un-intended results. <i>This notice shows if it detects more than 40 items.</i>
-		</div>
+			<!-- NOTICE 1 -->
+			<div class="status <?php echo ($notice['01'] == 'Good') ? 'pass' : 'fail' ?>"><?php echo $notice['01']; ?></div>
+			<div class="title" data-type="toggle" data-target="#s1-notice01">+ Configuration File</div>
+			<div class="info" id="s1-notice01">
+				Duplicator works best by placing the installer and archive files into an empty directory.  If a wp-config.php file is found in the extraction
+				directory it might indicate that a pre-existing WordPress site exists which can lead to a bad install.
+				<br/><br/>
+				<b>Options:</b>
+				<ul style="margin-bottom: 0">
+					<li>If the archive was already manually extracted then <a href="javascript:void(0)" onclick="DUPX.getManaualArchiveOpt()">[Enable Manual Archive Extraction]</a></li>
+					<li>If the wp-config file is not needed then remove it.</li>
+				</ul>
+			</div>
+
+			<!-- NOTICE 2 -->
+			<div class="status <?php echo ($notice['02'] == 'Good') ? 'pass' : 'fail' ?>"><?php echo $notice['02']; ?></div>
+			<div class="title" data-type="toggle" data-target="#s1-notice02">+ Directory Setup</div>
+			<div class="info" id="s1-notice02">
+				<b>Deployment Path:</b> <i><?php echo "{$GLOBALS['CURRENT_ROOT_PATH']}"; ?></i>
+				<br/><br/>
+				There are currently <?php echo "<b>[{$scancount}]</b>";?>  items in the deployment path. These items will be overwritten if they also exist
+				inside the archive file.  The notice is to prevent overwriting an existing site or trying to install on-top of one which
+				can have un-intended results. <i>This notice shows if it detects more than 40 items.</i>
+
+				<br/><br/>
+				<b>Options:</b>
+				<ul style="margin-bottom: 0">
+					<li>If the archive was already manually extracted then <a href="javascript:void(0)" onclick="DUPX.getManaualArchiveOpt()">[Enable Manual Archive Extraction]</a></li>
+					<li>If the files/directories are not the same as those in the archive then this notice can be ignored.</li>
+					<li>Remove the files if they are not needed and refresh this page.</li>
+				</ul>
+			</div>
+
+		<?php endif; ?>
 
 		<!-- NOTICE 3 -->
 		<div class="status <?php echo ($notice['03'] == 'Good') ? 'pass' : 'fail' ?>"><?php echo $notice['03']; ?></div>
@@ -318,12 +423,28 @@ OPTIONS
 		<tr>
 			<td>Extraction:</td>
 			<td>
-				<input type="checkbox" name="archive_manual" id="archive_manual" value="1" /> <label for="archive_manual">Manual package extraction</label><br/>
+
+				<select id="archive_engine" name="archive_engine" size="2">
+					<option value="manual">Manual Archive Extraction</option>
+					<?php
+					//ZIP-ARCHIVE
+					echo (! $zip_archive_enabled)
+						? '<option disabled="true">PHP ZipArchive (not detected on server)</option>'
+						: '<option value="ziparchive" selected="true">PHP ZipArchive</option>';
+					?>
+				</select>
 			</td>
 		</tr>
 	</table>
 
 	<table class="dupx-opts dupx-advopts">
+		<tr>
+			<td>Config Files:</td>
+			<td>
+				<input type="checkbox" name="retain_config" id="retain_config" value="1" />
+				<label for="retain_config" style="font-weight: normal">Retain original .htaccess, .user.ini and web.config</label>
+			</td>
+		</tr>
 		<tr>
 			<td>File Times:</td>
 			<td>
@@ -395,7 +516,7 @@ NOTICES
 			Manual extraction is only needed when your server does not support the ZipArchive extension.  Please see the online help for more details.
 			<br/><br/>
 
-			<b>After Install:</b> When you are done with the installation you must remove remove the these files/directories:
+			<b>After Install:</b> When you are done with the installation you must remove the these files/directories:
 			<ul>
 				<li>installer.php</li>
 				<li>installer-data.sql</li>
@@ -435,7 +556,7 @@ NOTICES
 </div>
 
 
-<?php if (! $req_success  ||  $arcCheck == 'Fail') :?>
+<?php if (! $req_success  ||  $all_arc == 'Fail') :?>
 	<div class="s1-err-msg">
 		<i>
 			This installation will not be able to proceed until the 'Archive' and 'Validation' sections pass. Please adjust your servers settings or contact your
@@ -474,6 +595,7 @@ Auto Posts to view.step2.php
 		<input type="hidden" name="action_step" value="2" />
 		<input type="hidden" name="archive_name" value="<?php echo $GLOBALS['FW_PACKAGE_NAME'] ?>" />
 		<input type="hidden" name="logging" id="ajax-logging"  />
+		<input type="hidden" name="retain_config" id="ajax-retain-config"  />
 		<input type="hidden" name="json"    id="ajax-json" />
 		<textarea id='ajax-json-debug' name='json_debug_view'></textarea>
 		<input type='submit' value='manual submit'>
@@ -502,6 +624,14 @@ Auto Posts to view.step2.php
 </form>
 
 <script>
+    DUPX.getManaualArchiveOpt = function ()
+    {
+        $("html, body").animate({scrollTop: $(document).height()}, 1500);
+        $("a[data-target='#s1-area-adv-opts']").find('i').removeClass('dupx-plus-square').addClass('dupx-minus-square');
+        $('#s1-area-adv-opts').show(1000);
+        $('select#archive_engine').val('manual').focus();
+    };
+
 	/** Performs Ajax post to extract files and create db
 	 * Timeout (10000000 = 166 minutes) */
 	DUPX.runExtraction = function()
@@ -527,6 +657,7 @@ Auto Posts to view.step2.php
 				$("#ajax-json-debug").val(dataJSON);
                 if (typeof(data) != 'undefined' && data.pass == 1) {
 					$("#ajax-logging").val($("input:radio[name=logging]:checked").val());
+					 $("#ajax-retain-config").val($("#retain_config").is(":checked") ? 1 : 0);
 					$("#ajax-json").val(escape(dataJSON));
 					<?php if (! $GLOBALS['DUPX_DEBUG']) : ?>
 						setTimeout(function() {$('#s1-result-form').submit();}, 500);
@@ -576,7 +707,7 @@ Auto Posts to view.step2.php
     {
 		DUPX.acceptWarning();
         $("*[data-type='toggle']").click(DUPX.toggleClick);
-        <?php echo ($arcCheck == 'Fail') 	? "$('#s1-area-archive-file-link').trigger('click');" 	: ""; ?>
+        <?php echo ($all_arc == 'Fail') 	? "$('#s1-area-archive-file-link').trigger('click');" 	: ""; ?>
 		<?php echo (! $all_success)         ? "$('#s1-area-sys-setup-link').trigger('click');"      : ""; ?>
 	})
 </script>

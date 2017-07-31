@@ -25,8 +25,8 @@ $dbbuild_mode    = ($mysqldump_on) ? 'mysqldump' : 'PHP';
 	table.dup-dtl-data-tbl {width:100%}
 	table.dup-dtl-data-tbl tr {vertical-align: top}
 	table.dup-dtl-data-tbl tr:first-child td {margin:0; padding-top:0 !important;}
-	table.dup-dtl-data-tbl td {padding:0 6px 0 0; padding-top:10px !important;}
-	table.dup-dtl-data-tbl td:first-child {font-weight: bold; width:150px}
+	table.dup-dtl-data-tbl td {padding:0 5px 0 0; padding-top:10px !important;}
+	table.dup-dtl-data-tbl td:first-child {font-weight: bold; width:130px}
 	table.dup-sub-list td:first-child {white-space: nowrap; vertical-align: middle; width: 70px !important;}
 	table.dup-sub-list td {white-space: nowrap; vertical-align:top; padding:0 !important; font-size:12px}
 	div.dup-box-panel-hdr {font-size:14px; display:block; border-bottom: 1px dotted #efefef; margin:5px 0 5px 0; font-weight: bold; padding: 0 0 5px 0}
@@ -43,6 +43,8 @@ $dbbuild_mode    = ($mysqldump_on) ? 'mysqldump' : 'PHP';
 	div#dup-name-info, div#dup-version-info {display: none; font-size:11px; line-height:20px; margin:4px 0 0 0}
 	div#dup-downloads-area {padding: 5px 0 5px 0; }
 	div#dup-downloads-msg {margin-bottom:-5px; font-style: italic}
+	div.sub-section {padding:7px 0 0 0}
+	textarea.file-info {width:100%; height:100px; font-size:12px }
 </style>
 
 <?php if ($package_id == 0) :?>
@@ -158,10 +160,6 @@ DIALOG: QUICK PATH -->
 
 <!-- ===============================
 STORAGE -->
-<?php 
-	$css_file_filter_on = $package->Archive->FilterOn == 1  ? '' : 'sub-item-disabled';
-	$css_db_filter_on   = $package->Database->FilterOn == 1 ? '' : 'sub-item-disabled';
-?>
 <div class="dup-box">
 <div class="dup-box-title">
 	<i class="fa fa-database"></i> <?php _e('Storage', 'duplicator') ?>
@@ -208,7 +206,6 @@ STORAGE -->
 <!-- ===============================
 ARCHIVE -->
 <?php 
-	$css_file_filter_on = $package->Archive->FilterOn == 1  ? '' : 'sub-item-disabled';
 	$css_db_filter_on   = $package->Database->FilterOn == 1 ? '' : 'sub-item-disabled';
 ?>
 <div class="dup-box">
@@ -225,43 +222,48 @@ ARCHIVE -->
 			<td><?php _e('Build Mode', 'duplicator') ?>: </td>
 			<td><?php _e('ZipArchive', 'duplicator'); ?></td>
 		</tr>			
-		<tr>
-			<td><?php _e('Filters', 'duplicator') ?>: </td>
-			<td><?php echo $package->Archive->FilterOn == 1 ? 'On' : 'Off'; ?></td>
-		</tr>
-		<tr class="sub-item <?php echo $css_file_filter_on ?>">
-			<td><?php _e('Directories', 'duplicator') ?>: </td>
-			<td>
-				<?php 
-					echo strlen($package->Archive->FilterDirs) 
-						? str_replace(';', '<br/>', $package->Archive->FilterDirs)
-						: __('- no filters -', 'duplicator');	
-				?>
-			</td>
-		</tr>
-		<tr class="sub-item <?php echo $css_file_filter_on ?>">
-			<td><?php _e('Extensions', 'duplicator') ?>: </td>
-			<td>
-				<?php
-					echo isset($package->Archive->FilterExts) && strlen($package->Archive->FilterExts) 
-						? $package->Archive->FilterExts
-						: __('- no filters -', 'duplicator');
-				?>
-			</td>
-		</tr>
-		<tr class="sub-item <?php echo $css_file_filter_on ?>">
-			<td><?php _e('Files', 'duplicator') ?>: </td>
-			<td>
-				<i>
-					<?php _e('Available in', 'duplicator') ?> 
-					<a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_content=free_file_filters&utm_campaign=duplicator_pro" target="_blank"><?php _e('Professional', 'duplicator');?></a> 
-				</i>
-				<i class="fa fa-lightbulb-o" 
-				   data-tooltip-title="<?php _e('File Filters:', 'duplicator'); ?>" 
-				   data-tooltip="<?php _e('File filters allows you to select individual files and add them to an exclusion list that will filter them from the package.', 'duplicator'); ?>">
-				</i>
-			</td>
-		</tr>			
+
+		<?php if ($package->Archive->ExportOnlyDB) : ?>
+			<tr>
+				<td><?php _e('Database Mode', 'duplicator') ?>: </td>
+				<td><?php _e('Archive Database Only Enabled', 'duplicator')	?></td>
+			</tr>
+		<?php else : ?>
+			<tr>
+				<td><?php _e('Filters', 'duplicator') ?>: </td>
+				<td>
+					<?php echo $package->Archive->FilterOn == 1 ? 'On' : 'Off'; ?>
+					<div class="sub-section">
+						<b><?php _e('Directories', 'duplicator') ?>:</b> <br/>
+						<?php
+							$txt = strlen($package->Archive->FilterDirs)
+								? str_replace(';', ";\n", $package->Archive->FilterDirs)
+								: __('- no filters -', 'duplicator');
+						?>
+						<textarea class='file-info' readonly="true"><?php echo $txt; ?></textarea>
+					</div>
+	
+					<div class="sub-section">
+						<b><?php _e('Extensions', 'duplicator') ?>: </b><br/>
+						<?php
+						echo isset($package->Archive->FilterExts) && strlen($package->Archive->FilterExts)
+							? $package->Archive->FilterExts
+							: __('- no filters -', 'duplicator');
+						?>
+					</div>
+					
+					<div class="sub-section">
+						<b><?php _e('Files', 'duplicator') ?>:</b><br/>
+						<?php
+							$txt = strlen($package->Archive->FilterFiles)
+								? str_replace(';', ";\n", $package->Archive->FilterFiles)
+								: __('- no filters -', 'duplicator');
+						?>
+						<textarea class='file-info' readonly="true"><?php echo $txt; ?></textarea>
+					</div>
+				</td>
+			</tr>
+		<?php endif; ?>
 	</table><br/>
 
 	<!-- DATABASE -->
@@ -341,7 +343,7 @@ INSTALLER -->
 
 
 <script>
-jQuery(document).ready(function ($) 
+jQuery(document).ready(function($) 
 {
 	
 	/*	Shows the 'Download Links' dialog
@@ -366,7 +368,6 @@ jQuery(document).ready(function ($)
 	//LOAD: 'Download Links' Dialog and other misc setup
 	Duplicator.Pack.GetLinksText = function() {$('#dup-dlg-quick-path-data').select();};	
 
-	/*	METHOD:  */
 	Duplicator.Pack.OpenAll = function () {
 		$("div.dup-box").each(function() {
 			var panel_open = $(this).find('div.dup-box-panel').is(':visible');
@@ -375,7 +376,6 @@ jQuery(document).ready(function ($)
 		 });
 	};
 
-	/*	METHOD: */
 	Duplicator.Pack.CloseAll = function () {
 			$("div.dup-box").each(function() {
 			var panel_open = $(this).find('div.dup-box-panel').is(':visible');

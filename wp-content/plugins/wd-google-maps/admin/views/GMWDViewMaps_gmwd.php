@@ -1187,7 +1187,24 @@ class GMWDViewMaps_gmwd extends GMWDView{
 				<td>
                     <input type="text" name="listing_header_title" id="listing_header_title" value="<?php _e("Markers","gmwd");?>" disabled readonly>                
                 </td>
-			</tr>             
+			</tr>
+            <tr>
+                <td><label for="marker_listing_order" title="<?php _e("Order your marker listsing.","gmwd");?>"><?php _e("Order By","gmwd");?>:</label></td>
+                <td>
+                    <select name="marker_listing_order" id="marker_listing_order" disabled readonly>
+                            <option><?php _e("Title","gmwd");?></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="marker_listing_order_dir" title="<?php _e("Choose order direction for your marker listsing.","gmwd");?>"><?php _e("Order Direction","gmwd");?>:</label></td>
+                <td>
+                    <input type="radio" class="inputbox" id="marker_listing_order_dir0" name="marker_listing_order_dir" checked="checked" value="asc" disabled readonly>
+                    <label for="marker_listing_order_dir0"><?php _e("Asc","gmwd"); ?></label>
+                    <input type="radio" class="inputbox" id="marker_listing_order_dir1" name="marker_listing_order_dir"  value="desc" disabled readonly>
+                    <label for="marker_listing_order_dir1"><?php _e("Desc","gmwd"); ?></label>
+                </td>
+            </tr>
 			<tr>
 				<td><label for="marker_list_position" title="<?php _e("Select the position for marker listing.","gmwd");?>"><?php _e("Marker List Position","gmwd");?>:</label></td>
 				<td>

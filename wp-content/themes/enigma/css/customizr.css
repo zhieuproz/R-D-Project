@@ -1,9 +1,9 @@
-/*Cutomizer CSS*/
+/*Cutomizer CSS*/#customize-controls [id*="enigma_theme_option"] > h3:before {    content: '\f0ad';    font-family: fontawesome;    padding-right: 5px;}
 #accordion-section-enigma_more h3.accordion-section-title{
 	background: #31A3DD;
 	color:#fff;
 	
-}
+}.stitched {   padding: 20px;   margin: 10px;   background: #558a9a;   color: #fff;   font-size: 17px;   font-weight: bold;   line-height: 1.3em;   border: 2px dashed #fff;   border-radius: 10px;   box-shadow: 0 0 0 4px #558a9a, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);   text-shadow: -1px -1px #aa3030;   font-weight: normal;}
 .btn-lg, .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;

@@ -153,6 +153,7 @@ class DUP_Installer
             //GENERAL
             "fwrite_url_old" => get_option('siteurl'),
             "fwrite_archive_name" => "{$this->Package->NameHash}_archive.zip",
+			"fwrite_archive_onlydb" => $this->Package->Archive->ExportOnlyDB,
             "fwrite_package_notes" => $this->Package->Notes,
             "fwrite_secure_name" => $this->Package->NameHash,
             "fwrite_url_new" => $this->Package->Installer->OptsURLNew,
@@ -169,6 +170,7 @@ class DUP_Installer
             "fwrite_opts_delete" => json_encode($deleteOpts),
             "fwrite_blogname" => esc_html(get_option('blogname')),
             "fwrite_wproot" => DUPLICATOR_WPROOTPATH,
+			"fwrite_wplogin_url" => wp_login_url(),
             "fwrite_duplicator_version" => DUPLICATOR_VERSION);
 
         if (file_exists($template) && is_readable($template)) {

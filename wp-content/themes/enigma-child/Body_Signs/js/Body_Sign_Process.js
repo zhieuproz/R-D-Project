@@ -6,6 +6,24 @@
 
 "use strict";
 
+var date = new Date(); //set date automatically
+var day = date.getDate();
+var month = date.getMonth()+1;
+var year = date.getFullYear();
+var FinalDay = month+'/'+day+'/'+year;
+
+// change variables day and month to 2 letters 
+if(day <10)
+{
+	day = '0'+day;
+}
+
+if( month<10)
+{
+	month = '0' + month;	
+}
+
+
 function CheckBodySigns()
 {
 		//Getting Value from Sliders
@@ -115,7 +133,7 @@ function CheckBodySigns()
 			alert("Please scale at least 1 organ before calculating");
 			return false;
 		}
-	return true; 
+		return true;
 }
 
 
@@ -134,7 +152,7 @@ $(document).ready(function()
 			data : {'action' : 'processing', 
 					'search_date' : OD
 					},
-			url : AJAX.url,
+			url : ajax.url,
 			success : function (resp){
 				$('#Old-Result').html(resp);
 			}

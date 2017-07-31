@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="<?php echo admin_url( 'admin.php?page=smuz-forms-main' ) ?>">
-				<?php smuzform_translate_e( 'WP Forms' ) ?>
+				<?php smuzform_translate_e( 'Form Builder' ) ?>
 			</a>
 			
 			<ul class="nav navbar-nav navbar-right" id="navBarActionsCont"></ul>

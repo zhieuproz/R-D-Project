@@ -38,79 +38,37 @@
 	<div class="row enigma_blog_wrapper">
 	<div class="col-md-12"> 
 			<?php 
-				Add_BodySign();
-				$Name = $current_user->display_name; //getting current user to variable name to use !!
-				include("Database/ConnectDatabase.php");
-				$sql = mysqli_query($conn,"select Average from bodysign where User_Identify = '$Name' order by Date desc limit 1"); //Getting newest Date in Database
-				if(mysqli_num_rows($sql) != 0) 
-				{
-					$row = mysqli_fetch_array($sql);
-					//echo '<h1 style="color:cadetblue;">  </h1><br/>';
-					Show_BodySign($row[0]);
-					
-					echo '<div class="row">';
-						echo'<div class="col-md-12" id="chartContainer" style="height: 400px;"></div>';
-					echo '</div>';
-					
-					$sql = mysqli_query($conn,"select Average,Head_Scale from bodysign where User_Identify = '$Name'");
-					
-					$line_chart = array();
-					if(mysqli_num_rows($sql) != 0) 
-					{
-						while($row = mysqli_fetch_assoc($sql)) // getting multiple rows in database 
-						{
-							$x = $row["Average"];
-							$y = $row["Head_Scale"];
-							array_push($line_chart,$x, $y); // add value to array
-							
-						}
-						
-					}
-					?>
-					
-					<script type="text/javascript">
-						window.onload = function() {
-							
-							var line_data = <?php echo json_encode($line_chart); ?>;
-							
-							console.log(line_data);
-							
-							
-							var chart = new CanvasJS.Chart("chartContainer", {
-								title: {
-									text: "Summary Stress Level Over the last 10 buckets:"
-								},
-								axisX: {
-									interval: 10
-								},
-								data: [{
-									type: "line",
-									dataPoints: [
-									  { x: 10, y: 45 },
-									  { x: 20, y: 14 },
-									]
-								}]
-							});
-							
-								/* for(var i = 0 ; i< line_data.length ; i++)
-								{
-									console.log(chart.dataPoints = [{x : 10 , y : 20}]);
-								}*/
-									<?php //echo json_encode($line_chart, JSON_NUMERIC_CHECK); ?>
-							chart.render();
-						}
-						</script>
-						
-						
-					<?php
-					
-				}
+				if(is_user_logged_in() == false) 
+					echo'<div style="color:red; font-size:25px;"> Please Login to use this function.!!! </div>';
 				else
 				{
-					echo "<Span id='first-time' style='color:red; font-size:1.5em;'>You have no Body Sign post yet!!! </span> <br /> <br />";
-					echo '<span id="first-time" style="font-size:1.3em;">'.'Please take your test then you can view your bucket by this <a href="'.site_url().'//Body Signs"'.'>link</a></span>';
-				}
+					Add_BodySign();
+					$Name = $current_user->display_name; //getting current user to variable name to use !!
+					include("Database/ConnectDatabase.php");
+					$sql = mysqli_query($conn,"select Average from bodysign where User_Identify = '$Name' order by Date desc limit 1"); //Getting newest Date in Database
+					if(mysqli_num_rows($sql) != 0) 
+					{
+						$row = mysqli_fetch_array($sql);
+
+						Show_BodySign($row[0]);
+						
+						echo '<div class="row">';
+						echo '<a href="'.site_url()."/recommendation".'">Link to Recommendation Page</a> ';
+						echo '</div>';
+						
+						
 				
+						?>
+
+						<?php
+
+					}
+					else
+					{
+						echo "<Span id='first-time' style='color:red; font-size:1.5em;'>You have no Body Sign post yet!!! </span> <br /> <br />";
+						echo '<span id="first-time" style="font-size:1.3em;">'.'Please take your test then you can view your bucket by this <a href="'.site_url().'//Body Signs"'.'>link</a></span>';
+					}
+				}
 			?>
 		</div>
 	</div>	

@@ -27,7 +27,7 @@
 			
 			<div class="um-admin-btn-content">
 			
-				<p class="um-admin-reset-conditions"><a href="#" class="button button-primary"><?php _e('Reset all rules','ultimatemember'); ?></a></p>
+				<p class="um-admin-reset-conditions"><a href="#" class="button button-primary"><?php _e('Reset all rules','ultimate-member'); ?></a></p>
 				<div class="um-admin-clear"></div>
 				
 				<?php
@@ -95,7 +95,7 @@
 		
 		$metabox = new UM_Admin_Metabox();
 		
-		if ( !is_user_logged_in() || !current_user_can('manage_options') ) die( __('Please login as administrator','ultimatemember') );
+		if ( !is_user_logged_in() || !current_user_can('manage_options') ) die( __('Please login as administrator','ultimate-member') );
 		
 		extract($_POST);
 		
@@ -120,7 +120,7 @@
 				?>
 				
 					<div class="um-admin-metabox">
-						<p class="_icon_search"><input type="text" name="_icon_search" id="_icon_search" value="" placeholder="<?php _e('Search Icons...','ultimatemember'); ?>" /></p>
+						<p class="_icon_search"><input type="text" name="_icon_search" id="_icon_search" value="" placeholder="<?php _e('Search Icons...','ultimate-member'); ?>" /></p>
 					</div>
 				
 					<div class="um-admin-icons">
@@ -139,9 +139,10 @@
 				
 				ob_start();
 				$form_fields = $ultimatemember->query->get_attr( 'custom_fields', $arg2 );
+				$form_fields = array_values( array_filter( array_keys( $form_fields ) ) );
 				?>
 					
-					<h4><?php _e('Setup New Field','ultimatemember'); ?></h4>
+					<h4><?php _e('Setup New Field','ultimate-member'); ?></h4>
 					<div class="um-admin-btns">
 						
 						<?php
@@ -157,7 +158,7 @@
 						
 					</div>
 					
-					<h4><?php _e('Predefined Fields','ultimatemember'); ?></h4>
+					<h4><?php _e('Predefined Fields','ultimate-member'); ?></h4>
 					<div class="um-admin-btns">
 						
 						<?php
@@ -167,24 +168,23 @@
 								if ( !isset( $array['account_only'] ) && !isset( $array['private_use'] ) ) {
 						?>
 						
-						<a href="#" class="button" <?php disabled( in_array( $field_key, array_keys( $form_fields ) ) ) ?> data-silent_action="um_admin_add_field_from_predefined" data-arg1="<?php echo $field_key; ?>" data-arg2="<?php echo $arg2; ?>"><?php echo um_trim_string( stripslashes( $array['title'] ), 20 ); ?></a>
+						<a href="#" class="button" <?php disabled( in_array( $field_key,  $form_fields  ) ) ?> data-silent_action="um_admin_add_field_from_predefined" data-arg1="<?php echo $field_key; ?>" data-arg2="<?php echo $arg2; ?>"><?php echo um_trim_string( stripslashes( $array['title'] ), 20 ); ?></a>
 
-						<?php } } } else { echo '<p>' . __('None','ultimatemember') . '</p>'; } ?>
+						<?php } } } else { echo '<p>' . __('None','ultimate-member') . '</p>'; } ?>
 						
 					</div>
 					
-					<h4><?php _e('Custom Fields','ultimatemember'); ?></h4>
+					<h4><?php _e('Custom Fields','ultimate-member'); ?></h4>
 					<div class="um-admin-btns">
 						
 						<?php
 						if ( $ultimatemember->builtin->custom_fields ) {
 							foreach ($ultimatemember->builtin->custom_fields as $field_key => $array) {
-
 						?>
 						
-						<a href="#" class="button with-icon" data-silent_action="um_admin_add_field_from_list" data-arg1="<?php echo $field_key; ?>" data-arg2="<?php echo $arg2; ?>"><?php echo um_trim_string( stripslashes( $array['title'] ), 20 ); ?><span class="remove"></span></a>
+						<a href="#" class="button with-icon" data-silent_action="um_admin_add_field_from_list" data-arg1="<?php echo $field_key; ?>" data-arg2="<?php echo $arg2; ?>"><?php echo um_trim_string( stripslashes( $array['title'] ), 20 ); ?> <small>(<?php echo ucfirst( $array['type']); ?>)</small><span class="remove"></span></a>
 						
-						<?php } } else { echo '<p>' . __('You did not create any custom fields', 'ultimatemember') . '</p>'; } ?>
+						<?php } } else { echo '<p>' . __('You did not create any custom fields', 'ultimate-member') . '</p>'; } ?>
 						
 					</div>
 					
@@ -218,7 +218,7 @@
 				
 				if ( !isset( $col1 ) ) {
 				
-					echo '<p>'. __('This field type is not setup correcty.', 'ultimatemember') . '</p>';
+					echo '<p>'. __('This field type is not setup correcty.', 'ultimate-member') . '</p>';
 					
 				} else {
 
@@ -288,7 +288,7 @@
 				
 				if ( !isset( $col1 ) ) {
 				
-					echo '<p>'. __('This field type is not setup correcty.', 'ultimatemember') . '</p>';
+					echo '<p>'. __('This field type is not setup correcty.', 'ultimate-member') . '</p>';
 					
 				} else {
 				

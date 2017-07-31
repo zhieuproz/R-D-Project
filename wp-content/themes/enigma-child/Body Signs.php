@@ -80,7 +80,7 @@
 
 	<div id="int_base">
 		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="800px" height="1440px" viewBox="0 0 800 1440" xml:space="preserve">
-			<image overflow="visible" width="800" height="1440" xlink:href="<?php echo get_stylesheet_directory_uri().'//Body_Signs/int-image.png' ?>" ></image>
+			<image overflow="visible" width="800" height="1440" xlink:href="<?php echo get_stylesheet_directory_uri().'//Body_Signs/ext-image.png' ?>" ></image>
 			<path id="int_1" d="M400.583,57.882c3.502,0-0.583-35.132,2.417-36.132s11,3.75,15,3.75s12.5,6.75,15,7.5s15.5,17.371,15.5,23.5c0,3.612,3.419,6.083,2.085,11s2.166,4.084,1.083,7.917s0.999,8-0.417,10.833s-4.278,3.171-3.5,5.583c2.583,8-6.417,8.583-4.667,11.333c0.825,1.296-0.75,5-0.083,6.167s0,5.583-11.25,7.583s-20.082,0.583-21.166,2.583s-3.917,6.167-9.334,6.167c-5.417,0-9.417-4.167-10.417-5.25s-9.417-1.833-12.667-2s-8.334-2.25-12.417-2.417s-9.833-4.833-8.417-7.5s-1.521-3.417-0.219-5.167s0.219-1.917-1.781-4.083s-3.667-5.583-2.667-7.583s-4.333-4.333-3-8.583s-1.75-7.167,0.417-10.5s-1.5-5.083,0.667-12.167s2.25-8.583,4.917-13.333s13.416-14.833,17.333-16.667s5.417-4.25,9.667-4.75s10.31-3.982,13.417-4.055c3-0.07,2.77,1.581,2.861,3.713C399.418,36.417,398.168,57.882,400.583,57.882z"/>
 			<path id="int_2" d="M401,195c3.834,0.167,6.638-5.791,7.834-12c-1.5-1.833-1.5-1.333-0.5-3.5s5-5.833,0-6s-2.335,3.557-7.751,3.667c-4.084,0.083-2.333-2.833-6.333-2.5c-2.327,0.194-4.667-1.667-4.417,1.417s2.167,5.25,1.833,7.667C393.167,190.833,397.166,194.833,401,195z"/>
 			<path id="int_3" d="M400.25,197.5c2.083,0,3.961,2.833,5.439,4c11.855-8.667,4.645-16.667,3.145-18.5c-1.196,6.209-4,12.167-7.834,12s-7.833-4.167-9.333-11.25c-8.417,14.333,2.583,16.333,3.583,17.167C397.5,198.667,398.167,197.5,400.25,197.5z"/>
@@ -108,7 +108,7 @@
 
 <!-- Form to Input Organs Information  -->
 <div class="col-xs-12 col-md-6">
-<form onSubmit="return CheckBodySigns();" method="post" class="form-horizontal form-group" name="BodySignForm" action="<?php echo get_site_url().'/Bucket-Model'; ?>"> <!-- sending variable to another custom template -->
+<form on method="post" onsubmit="return CheckBodySigns();" class="form-horizontal form-group" name="BodySignForm" action="<?php echo site_url(). '/bucket-model';?>" > <!-- sending variable to another custom template -->
 
 	<!-- Beginning External Organs -->
 <div id="External-Organ">

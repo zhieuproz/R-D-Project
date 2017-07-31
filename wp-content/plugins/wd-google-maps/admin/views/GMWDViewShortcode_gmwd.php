@@ -26,7 +26,7 @@ class GMWDViewShortcode_gmwd extends GMWDView{
 		$maps = $this->model->get_maps();
         $whitelist = array( '127.0.0.1', '::1' );
         $is_localhost = in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ? 1 : 0;
-        $map_api_url = "https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false&v=3.exp";
+        $map_api_url = "https://maps.googleapis.com/maps/api/js?libraries=places,geometry&v=3.exp";
 
         if(gmwd_get_option("map_language")){
             $map_api_url .= "&language=" . gmwd_get_option("map_language");
@@ -41,9 +41,9 @@ class GMWDViewShortcode_gmwd extends GMWDView{
 		}        
 	?>	
 
-		<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>	/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>	/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 		<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/utils/mctabs.js"></script>
-		<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
+		<script language="javascript" type="text/javascript" src="<?php echo site_url(); ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>-->
 		<script src="<?php echo GMWD_URL . '/js/admin_main.js'; ?>" type="text/javascript"></script>
 		<script src="<?php echo GMWD_URL . '/js/simple-slider.js'; ?>" type="text/javascript"></script>
         <script src="<?php echo $map_api_url; ?>" type="text/javascript"></script>
@@ -66,7 +66,7 @@ class GMWDViewShortcode_gmwd extends GMWDView{
 			
 			<?php
 				if (isset($_POST['tag_text'])) {
-					echo '<script>tinyMCEPopup.close();</script>'; 
+					echo '<script>top.tinyMCE.activeEditor.windowManager.close(window);</script>'; 
 					die();
 				}
 			?>
@@ -93,7 +93,7 @@ class GMWDViewShortcode_gmwd extends GMWDView{
                                 <tr>
                                     <td colspan="2">
                                         <input type="button" id="wd_insert" name="" value="Insert" class="wd-btn wd-btn-primary" onClick="gmwdInsertShortcode();" />
-                                        <input type="button" id="" name="" value="Cancel" class="wd-btn wd-btn-secondary" onClick="tinyMCEPopup.close();" />
+                                        <input type="button" id="" name="" value="Cancel" class="wd-btn wd-btn-secondary" onClick="top.tinyMCE.activeEditor.windowManager.close(window);" />
                                     </td>
                                 </tr>	                            
                             </table>
@@ -223,7 +223,8 @@ class GMWDViewShortcode_gmwd extends GMWDView{
             function gmwdShortcodeParams(){
                 var params = {};
                 
-                var editorText = tinyMCE.activeEditor.selection.getContent();
+                //var editorText = tinyMCE.activeEditor.selection.getContent();
+                var editorText = top.tinyMCE.activeEditor.selection.getContent();
                 var start = editorText.indexOf("[Google_Maps_WD");
                 var end = editorText.indexOf("]", start);
                 var shortcodes = [];
@@ -277,8 +278,9 @@ class GMWDViewShortcode_gmwd extends GMWDView{
                 jQuery("#tag_text").val(tagText);
                 jQuery("#adminForm").submit();
                 
-                window.tinyMCE.execCommand('mceInsertContent', false, short_code);
-                tinyMCEPopup.editor.execCommand('mceRepaint');                              
+                //window.tinyMCE.execCommand('mceInsertContent', false, short_code);
+                top.tinyMCE.execCommand('mceInsertContent', false, short_code);
+                //top.tinyMCEPopup.editor.execCommand('mceRepaint');                              
 			}
 
             
